@@ -26,6 +26,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 //import Presentation from "layouts/pages/presentation";
 
+// MY added components
+import Navbar from "components/my-components/Navbar.js";
+
 // My added pages
 import Home from "pages/LandingPages/Home"
 import HeroSection from "pages/LandingPages/HeroSection";
@@ -39,57 +42,6 @@ import LearnMore from "pages/LandingPages/LearnMore";
 
 
 export default function App() {
-  // const { pathname } = useLocation();
-
-  // Setting page scroll to 0 when changing the route
-  // useEffect(() => {
-  //   document.documentElement.scrollTop = 0;
-  //   document.scrollingElement.scrollTop = 0;
-  // }, [pathname]);
-
-  // Potential alternative to save the scroll position
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // const handleScroll = () => {
-  //   const position = window.pageYOffset;
-  //   setScrollPosition(position);
-  // };
-
-// useEffect(() => {
-//     window.addEventListener('scroll', handleScroll, { passive: true });
-
-//     return () => {
-//         window.removeEventListener('scroll', handleScroll);
-//     };
-// }, []);
-
-
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
-      console.log(route.route.slice(1))
-      if (route.collapse) {
-        return getRoutes(route.collapse);
-      }
-
-      if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
-      }
-
-      // const scrollPos = document.getElementById(route.route.slice(1))
-      // scrollPos.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
-      return null;
-    });
-
-    // Default site from Creative Tim Package
-  // return (
-  //   <ThemeProvider theme={theme}>
-  //     <CssBaseline />
-  //     <Routes>
-  //       {getRoutes(routes)}
-  //       <Route path="/presentation" element={<Presentation />} />
-  //       <Route path="*" element={<Navigate to="/presentation" />} />
-  //     </Routes>
-  //   </ThemeProvider>
-  // );
 
   //TODO: Fix all of the console log errors from browser inspection
   //TODO: Implement Hash Links (https://stackoverflow.com/questions/40280369/use-anchors-with-react-router)
@@ -99,8 +51,8 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Navbar/>
       <Routes>
-        {getRoutes(routes)}
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<Navigate to="/about" />} onEnter={function(){
                   document.getElementById("about").scrollIntoView()}} />
