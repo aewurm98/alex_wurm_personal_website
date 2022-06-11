@@ -150,7 +150,6 @@ function Navbar2({
             onClick={closeMobileNavbar}
           >
             <MKBox mr={1}>
-              {siteLogo}
               <LinkS
                 to="home"
                 smooth={true}
@@ -159,7 +158,7 @@ function Navbar2({
                 exact={true}
                 offset={0}
                 // onClick={this.scrollToTop}
-              ></LinkS>
+              >{siteLogo}</LinkS>
             </MKBox>
 
             <MKTypography
