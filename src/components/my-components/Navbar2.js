@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
-// import {Link} from "react-scroll"; doesn't work for brand on navbar
+import { Link as LinkS } from "react-scroll";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -28,10 +28,9 @@ import breakpoints from "assets/theme/base/breakpoints";
 const siteLogo = <i class="fa-solid fa-basketball"></i>;
 
 //TODO: Investigate porential to increase span size to make clicking easier
-function Navbar({
+function Navbar2({
   logo,
   brand,
-  routes,
   transparent,
   light,
   action,
@@ -52,17 +51,13 @@ function Navbar({
 
   const closeMobileNavbar = () => setMobileNavbar(false);
 
-  const siteLogo = <i class="fa-solid fa-basketball"></i>;
-
   function goToSection(rt) {
     setMobileNavbar(false);
-    document
-      .getElementById(rt.slice(1))
-      .scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest",
-      });
+    document.getElementById(rt.slice(1)).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
   }
 
   useEffect(() => {
@@ -94,6 +89,7 @@ function Navbar({
   // TODO: Figure out why the EventListeners are preventing navigating to external links
   // May need to add additional EventListener for link clicks, and build into the conditional logic of handleInteraction()
   // More likely need to find a better way to handle exiting the navbar otherwise defeats purpose of links; otherwise fine when makes sense to remove
+  //TODO: Figure out how to get ScrollToTop working for name+logo, then clean up formatting
 
   useEffect(() => {
     function handleInteraction(evt) {
@@ -112,9 +108,9 @@ function Navbar({
   });
 
   // Major modifications to Render Navbar Items function
-//   const renderNavbarItems = routes.map(
-//     ({ name, icon, href, route, collapse }) => <NavbarBase />
-//   );
+  //   const renderNavbarItems = routes.map(
+  //     ({ name, icon, href, route, collapse }) => <NavbarBase />
+  //   );
 
   return (
     <Container sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}>
@@ -153,14 +149,35 @@ function Navbar({
             // Added Navbar close on Link click
             onClick={closeMobileNavbar}
           >
-            <MKBox mr={1}>{siteLogo}</MKBox>
+            <MKBox mr={1}>
+              {siteLogo}
+              <LinkS
+                to="/"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+                // onClick={this.scrollToTop}
+              ></LinkS>
+            </MKBox>
 
             <MKTypography
               variant="button"
               fontWeight="bold"
               color={light ? "white" : "dark"}
             >
-              {brand}
+              <LinkS
+                to="/"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+                // onClick={this.scrollToTop}
+              >
+                {brand}
+              </LinkS>
             </MKTypography>
           </MKBox>
           <MKBox
@@ -171,38 +188,79 @@ function Navbar({
           >
             {/* NOTE: Major modification just calling in the base Navbar -- getting rid of renderNavbarItems function*/}
             <MKBox
-        mx={1}
-        p={1}
-        display="flex"
-        alignItems="baseline"
-        color={light ? "white" : "dark"}
-        opacity={light ? 1 : 0.6}
-        // sx={{ cursor: "pointer", userSelect: "none", position: "fixed", top: 0}}
-      >
-        <MKTypography
-          variant="body2"
-          lineHeight={1}
-          color="inherit"
-          sx={{ alignSelf: "center", "& *": { verticalAlign: "middle" } }}
-        >
-          {siteLogo}
-        </MKTypography>
-        <MKTypography
-          variant="button"
-          fontWeight="regular"
-          textTransform="capitalize"
-          color={light ? "white" : "dark"}
-          sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
-        >
-          Alex WUrm
-        </MKTypography>
-        {/* <MKTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
+              mx={1}
+              p={1}
+              display="flex"
+              alignItems="baseline"
+              color={light ? "white" : "dark"}
+              opacity={light ? 1 : 0.6}
+              sx={{ cursor: "pointer", userSelect: "none" }}
+            >
+              <LinkS
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                About
+              </LinkS>
+              <LinkS
+                to="work-experience"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                Work Experience
+              </LinkS>
+              <LinkS
+                to="projects"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                Projects
+              </LinkS>
+              <LinkS
+                to="learn-more"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                Learn More
+              </LinkS>
+
+              <MKTypography
+                variant="body2"
+                lineHeight={1}
+                color="inherit"
+                sx={{ alignSelf: "center", "& *": { verticalAlign: "middle" } }}
+              >
+                {/* {siteLogo} */}
+              </MKTypography>
+              <MKTypography
+                variant="button"
+                fontWeight="regular"
+                textTransform="capitalize"
+                color={light ? "white" : "dark"}
+                sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
+              >
+                {/* React Site */}
+              </MKTypography>
+              {/* <MKTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
           <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
             {collapse && "keyboard_arrow_down"}
           </Icon>
         </MKTypography> */}
-      </MKBox>
-      {/* {children && (
+            </MKBox>
+            {/* {children && (
         <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
           {children}
         </Collapse>
@@ -264,7 +322,75 @@ function Navbar({
           borderRadius="xl"
           px={transparent ? 2 : 0}
         >
-          {/* {mobileView && <NavbarMobile open={mobileNavbar} />} */}
+          {mobileView && (
+            <MKBox
+              mx={1}
+              p={1}
+              display="flex"
+              alignItems="baseline"
+              color={light ? "white" : "dark"}
+              opacity={light ? 1 : 0.6}
+              sx={{ cursor: "pointer", userSelect: "none" }}
+            >
+            <LinkS
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                About
+              </LinkS>
+              <LinkS
+                to="work-experience"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                Work Experience
+              </LinkS>
+              <LinkS
+                to="projects"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                Projects
+              </LinkS>
+              <LinkS
+                to="learn-more"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact={true}
+                offset={0}
+              >
+                Learn More
+              </LinkS>
+              <MKTypography
+                variant="body2"
+                lineHeight={1}
+                color="inherit"
+                sx={{ alignSelf: "center", "& *": { verticalAlign: "middle" } }}
+              >
+                {/* {siteLogo} */}
+              </MKTypography>
+              <MKTypography
+                variant="button"
+                fontWeight="regular"
+                textTransform="capitalize"
+                color={light ? "white" : "dark"}
+                sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
+              >
+                {/* React Site */}
+              </MKTypography>
+            </MKBox>
+          )}
         </MKBox>
       </MKBox>
     </Container>
@@ -272,7 +398,7 @@ function Navbar({
 }
 
 // Setting default values for the props of DefaultNavbar
-Navbar.defaultProps = {
+Navbar2.defaultProps = {
   logo: siteLogo,
   brand: "Alex Wurm",
   transparent: false,
@@ -284,7 +410,7 @@ Navbar.defaultProps = {
 };
 
 // Typechecking props for the DefaultNavbar
-Navbar.propTypes = {
+Navbar2.propTypes = {
   logo: PropTypes.any,
   brand: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -315,4 +441,4 @@ Navbar.propTypes = {
   center: PropTypes.bool,
 };
 
-export default Navbar;
+export default Navbar2;
