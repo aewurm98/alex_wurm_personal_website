@@ -40,6 +40,7 @@ import lp from "assets/images/my-images/Logicprep_logo.png";
 import SimpleNavbar from "components/my-components/SimpleNavbar.js";
 import Navbar from "components/my-components/Navbar.js";
 import Navbar2 from "components/my-components/Navbar2.js";
+import Navbar3 from "components/my-components/Navbar3.js";
 
 import HeroSection from "pages/LandingPages/HeroSection";
 import Bio from "pages/LandingPages/Bio";
@@ -74,7 +75,7 @@ const routes = [
 function Home() {
   return (
     <>
-      <Navbar2 
+      <Navbar3
       // light 
       // sx = {{
       //   color: "white"

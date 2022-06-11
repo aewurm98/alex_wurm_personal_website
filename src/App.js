@@ -49,22 +49,8 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/about" element={<Home />} />
-        <Route path="/work-experience" element={<Home />} />
-        <Route path="/projects" element={<Home />} />
-        <Route path="/learn-more" element={<Home />} /> */}
-
-        {/* <Route path="/about" element={<Navigate to="/about" />} onEnter={function(){
-                  document.getElementById("about").scrollIntoView()}} />
-        <Route path="/work-experience" element={<Navigate to="/work-experience" />} onEnter={function(){
-                  document.getElementById("work-experience").scrollIntoView()}}/>
-        <Route path="/projects" element={<Navigate to="/projects" />} onEnter={function(){
-                  document.getElementById("projects").scrollIntoView()}}/>
-        <Route path="/learn-more" element={<Navigate to="/learn-more" onEnter={function(){
-                  document.getElementById("learn-more").scrollIntoView()}}/>} /> */}
       </Routes>
     </ThemeProvider>
   );
