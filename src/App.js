@@ -13,10 +13,10 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect, useState, useRef} from "react";
+import { useEffect, useState, useRef } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation} from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -30,7 +30,7 @@ import theme from "assets/theme";
 import Navbar from "components/my-components/Navbar.js";
 
 // My added pages
-import Home from "pages/LandingPages/Home"
+import Home from "pages/LandingPages/Home";
 import HeroSection from "pages/LandingPages/HeroSection";
 import Bio from "pages/LandingPages/Bio";
 import WorkExperience from "pages/LandingPages/WorkExperience";
@@ -40,9 +40,7 @@ import LearnMore from "pages/LandingPages/LearnMore";
 // Material Kit 2 React routes
 // import routes from "routes";
 
-
 export default function App() {
-
   //TODO: Fix all of the console log errors from browser inspection
   //TODO: Implement Hash Links (https://stackoverflow.com/questions/40280369/use-anchors-with-react-router)
   //TODO: Implement scroll lock to position is saved when refreshing the page
@@ -51,7 +49,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar/>
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Home />} />
@@ -59,7 +57,6 @@ export default function App() {
         <Route path="/projects" element={<Home />} />
         <Route path="/learn-more" element={<Home />} />
 
-       
         {/* <Route path="/about" element={<Navigate to="/about" />} onEnter={function(){
                   document.getElementById("about").scrollIntoView()}} />
         <Route path="/work-experience" element={<Navigate to="/work-experience" />} onEnter={function(){

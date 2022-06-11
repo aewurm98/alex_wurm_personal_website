@@ -15,7 +15,7 @@ import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
 // MUIKit2 Examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+// import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import CenteredFooter from "examples/Footers/CenteredFooter";
 
 // Routes
@@ -37,19 +37,46 @@ import pg from "assets/images/my-images/Procter_Gamble_logo.png";
 import lp from "assets/images/my-images/Logicprep_logo.png";
 
 // Other Components
+import SimpleNavbar from "components/my-components/SimpleNavbar.js";
+import Navbar from "components/my-components/Navbar.js";
 import HeroSection from "pages/LandingPages/HeroSection";
 import Bio from "pages/LandingPages/Bio";
 import WorkExperience from "pages/LandingPages/WorkExperience";
 import Projects from "pages/LandingPages/Projects";
 import LearnMore from "pages/LandingPages/LearnMore";
 
-
+const routes = [
+  {
+    name: "about",
+    route: "/about",
+    component: <Home />
+  },
+  {
+    name: "work-experience",
+    route: "/work-experience",
+    component: <Home />
+  },
+  {
+    name: "projects",
+    route: "/projects",
+    component: <Home />
+  },
+  {
+    name: "learn-more",
+    route: "/learn-more",
+    component: <Home />
+  },
+];
 // TODO: Go back into Default Navbar and figure out how to add back functionality to collapse entire navbar after making a selection or clicking out
 // Home page. It works when I click the 'X' icon, so look through code to find and replicate that behavior.
 function Home() {
   return (
     <>
-      {/* <DefaultNavbar routes={routes} white dark /> */}
+      <SimpleNavbar 
+      light 
+      sx = {{
+        color: "white"
+      }}/>
       <div className="home">
         <HeroSection/>
       </div>
