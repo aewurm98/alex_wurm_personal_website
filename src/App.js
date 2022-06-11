@@ -35,7 +35,7 @@ import Projects from "pages/LandingPages/Projects";
 import LearnMore from "pages/LandingPages/LearnMore";
 
 // Material Kit 2 React routes
-import routes from "routes";
+// import routes from "routes";
 
 
 export default function App() {
