@@ -13,9 +13,6 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-// Routes
-import routes from "routes";
-
 // Images
 import alex from "assets/images/my-images/Alex_Nature_Zoom.png";
 import bgi from "assets/images/my-images/Abstract_Lines.jpg";

@@ -19,7 +19,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import CenteredFooter from "examples/Footers/CenteredFooter";
 
 // Routes
-import routes from "routes";
+// import routes from "routes";
 
 // Images
 import alex from "assets/images/my-images/Alex_Nature_Zoom.png";
