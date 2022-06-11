@@ -26,6 +26,7 @@ import breakpoints from "assets/theme/base/breakpoints";
 
 // Set website logo
 const siteLogo = <i class="fa-solid fa-basketball"></i>;
+const navItemLogo = <i class="fa-solid fa-basketball-hoop"></i>;
 
 //TODO: Investigate porential to increase span size to make clicking easier
 function Navbar3({
@@ -128,18 +129,18 @@ function Navbar3({
       >
         <MKBox display="flex" justifyContent="start" alignItems="center">
           <MKBox
-            component={Link}
             to="/"
             lineHeight={1}
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
             display="flex"
+            flex={1}
             justifyContent="start"
             alignItems="center"
             // Added Navbar close on Link click
             onClick={closeMobileNavbar}
           >
-            <MKBox mr={1}>
+            <MKBox mr={1} component={Link} to="home">
               <LinkS
                 to="home"
                 smooth={true}
@@ -151,6 +152,7 @@ function Navbar3({
                 {siteLogo}
               </LinkS>
             </MKBox>
+            <MKBox component={Link} to="home">
             <MKTypography
               variant="button"
               fontWeight="bold"
@@ -167,29 +169,32 @@ function Navbar3({
                 {brand}
               </LinkS>
             </MKTypography>
+            </MKBox>
           </MKBox>
           <MKBox
             color="inherit"
             display={{ xs: "none", lg: "flex" }}
+            flex={{ xs: 0, lg: 1 }}
             ml="auto"
             mr={center ? "auto" : 0}
           >
-            {/* NOTE: Major modification just calling in the base Navbar -- getting rid of renderNavbarItems function*/}
             <MKBox
-              mx={1}
-              p={1}
-              display="grid"
+              mx={0}
+              p={0}
+              width="100%"
+              display="flex"
               direction="column"
-              alignItems="baseline"
+              justifyContent="center"
+              alignItems="flex-end"
               color={light ? "white" : "dark"}
               opacity={light ? 1 : 0.6}
               sx={{ cursor: "pointer", userSelect: "none" }}
             >
               <MKTypography
                 variant="button"
-                fontWeight="normal"
+                fontWeight="medium"
                 color={light ? "white" : "dark"}
-                mr={3}
+                mx="auto"
               >
                 <LinkS
                   to="about"
@@ -204,9 +209,9 @@ function Navbar3({
               </MKTypography>
               <MKTypography
                 variant="button"
-                fontWeight="normal"
+                fontWeight="medium"
                 color={light ? "white" : "dark"}
-                mr={3}
+                mx="auto"
               >
                 <LinkS
                   to="work-experience"
@@ -221,9 +226,9 @@ function Navbar3({
               </MKTypography>
               <MKTypography
                 variant="button"
-                fontWeight="normal"
+                fontWeight="medium"
                 color={light ? "white" : "dark"}
-                mr={3}
+                mx="auto"
               >
                 <LinkS
                   to="projects"
@@ -238,8 +243,9 @@ function Navbar3({
               </MKTypography>
               <MKTypography
                 variant="button"
-                fontWeight="normal"
+                fontWeight="medium"
                 color={light ? "white" : "dark"}
+                mx="auto"
               >
                 <LinkS
                   to="learn-more"
@@ -252,22 +258,12 @@ function Navbar3({
                   Learn More
                 </LinkS>
               </MKTypography>
-
-              <MKTypography
-                variant="button"
-                fontWeight="regular"
-                textTransform="capitalize"
-                color={light ? "white" : "dark"}
-                sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
-              >
-              </MKTypography>
-
             </MKBox>
-
           </MKBox>
           <MKBox
-            display={{ xs: "inline-block", lg: "none" }}
+            display={{ xs: "grid", lg: "none" }}
             lineHeight={0}
+            justifyContent="center"
             py={1.5}
             pl={1.5}
             color={transparent ? "white" : "inherit"}
@@ -283,16 +279,29 @@ function Navbar3({
           borderRadius="xl"
           px={transparent ? 2 : 0}
         >
+          {/* NOTE: start of the mobile section */}
           {mobileView && (
             <MKBox
-              mx={1}
-              p={1}
-              display="flex"
-              alignItems="baseline"
+            my={1}
+            mx={0}
+            p={0}
+            minHeight="20vh"
+            display="grid"
+            direction="row"
+            justifyContent="start"
+            alignItems="start"
+            color={light ? "white" : "dark"}
+            opacity={light ? 1 : 0.6}
+            sx={{ cursor: "pointer", userSelect: "none" }}
+          >
+            <MKTypography
+              variant="button"
+              fontWeight="medium"
               color={light ? "white" : "dark"}
-              opacity={light ? 1 : 0.6}
-              sx={{ cursor: "pointer", userSelect: "none" }}
+              my="auto"
             >
+              {navItemLogo}
+
               <LinkS
                 to="about"
                 smooth={true}
@@ -303,6 +312,13 @@ function Navbar3({
               >
                 About
               </LinkS>
+            </MKTypography>
+            <MKTypography
+              variant="button"
+              fontWeight="medium"
+              color={light ? "white" : "dark"}
+              my="auto"
+            >
               <LinkS
                 to="work-experience"
                 smooth={true}
@@ -313,6 +329,13 @@ function Navbar3({
               >
                 Work Experience
               </LinkS>
+            </MKTypography>
+            <MKTypography
+              variant="button"
+              fontWeight="medium"
+              color={light ? "white" : "dark"}
+              my="auto"
+            >
               <LinkS
                 to="projects"
                 smooth={true}
@@ -323,6 +346,13 @@ function Navbar3({
               >
                 Projects
               </LinkS>
+            </MKTypography>
+            <MKTypography
+              variant="button"
+              fontWeight="medium"
+              color={light ? "white" : "dark"}
+              my="auto"
+            >
               <LinkS
                 to="learn-more"
                 smooth={true}
@@ -333,7 +363,8 @@ function Navbar3({
               >
                 Learn More
               </LinkS>
-            </MKBox>
+            </MKTypography>
+          </MKBox>
           )}
         </MKBox>
       </MKBox>

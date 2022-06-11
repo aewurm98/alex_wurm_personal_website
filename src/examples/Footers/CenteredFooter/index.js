@@ -136,13 +136,14 @@ function CenteredFooter({ company, links, socials, light }) {
 
 // Setting my values for CenteredFooter
 //TODO: With actual domain update paths for better SEO
+//TODO: Build out alternative Footer with Scroll Links
 CenteredFooter.defaultProps = {
   company: { href: "/", name: "Alex Wurm" },
   links: [
-    { href: "/#about", name: "About" },
-    { href: "/#work-experience", name: "Work Experience" },
-    { href: "/#projects", name: "Projects" },
-    { href: "/#learn-more", name: "Learn More" },
+    { href: "about", name: "About" },
+    { href: "work-experience", name: "Work Experience" },
+    { href: "projects", name: "Projects" },
+    { href: "learn-more", name: "Learn More" },
   ],
   socials: [
     {
