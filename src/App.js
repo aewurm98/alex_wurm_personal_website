@@ -54,6 +54,12 @@ export default function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Home />} />
+        <Route path="/work-experience" element={<Home />} />
+        <Route path="/projects" element={<Home />} />
+        <Route path="/learn-more" element={<Home />} />
+
+       
         {/* <Route path="/about" element={<Navigate to="/about" />} onEnter={function(){
                   document.getElementById("about").scrollIntoView()}} />
         <Route path="/work-experience" element={<Navigate to="/work-experience" />} onEnter={function(){
