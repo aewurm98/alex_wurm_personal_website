@@ -152,7 +152,7 @@ function Navbar2({
             <MKBox mr={1}>
               {siteLogo}
               <LinkS
-                to="/"
+                to="home"
                 smooth={true}
                 duration={500}
                 spy={true}
@@ -168,7 +168,7 @@ function Navbar2({
               color={light ? "white" : "dark"}
             >
               <LinkS
-                to="/"
+                to="home"
                 smooth={true}
                 duration={500}
                 spy={true}
