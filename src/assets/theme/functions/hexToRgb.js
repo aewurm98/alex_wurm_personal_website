@@ -13,14 +13,16 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+/**
+  The hexToRgb() function helps you to change the hex color code to rgb
+  using chroma-js library.
+ */
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+// chroma-js is a library for all kinds of color conversions and color scales.
+import chroma from "chroma-js";
+
+function hexToRgb(color) {
+  return chroma(color).rgb().join(", ");
+}
+
+export default hexToRgb;

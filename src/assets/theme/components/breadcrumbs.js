@@ -13,14 +13,22 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+// Material Kit 2 React base styles
+import colors from "assets/theme/base/colors";
+import typography from "assets/theme/base/typography";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+const { grey } = colors;
+const { size } = typography;
+
+export default {
+  styleOverrides: {
+    li: {
+      lineHeight: 0,
+    },
+
+    separator: {
+      fontSize: size.sm,
+      color: grey[600],
+    },
+  },
+};

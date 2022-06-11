@@ -13,14 +13,22 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+// Material Kit 2 React base styles
+import borders from "assets/theme/base/borders";
+import boxShadows from "assets/theme/base/boxShadows";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+const { borderRadius } = borders;
+const { xxl } = boxShadows;
+
+export default {
+  styleOverrides: {
+    paper: {
+      borderRadius: borderRadius.lg,
+      boxShadow: xxl,
+    },
+
+    paperFullScreen: {
+      borderRadius: 0,
+    },
+  },
+};

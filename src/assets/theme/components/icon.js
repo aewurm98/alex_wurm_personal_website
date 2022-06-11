@@ -13,14 +13,26 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+// Material Kit 2 React helper functions
+import pxToRem from "assets/theme/functions/pxToRem";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+export default {
+  defaultProps: {
+    baseClassName: "material-icons-round",
+    fontSize: "inherit",
+  },
+
+  styleOverrides: {
+    fontSizeInherit: {
+      fontSize: "inherit !important",
+    },
+
+    fontSizeSmall: {
+      fontSize: `${pxToRem(20)} !important`,
+    },
+
+    fontSizeLarge: {
+      fontSize: `${pxToRem(36)} !important`,
+    },
+  },
+};

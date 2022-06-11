@@ -13,14 +13,16 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+/**
+  The rgba() function helps you to create a rgba color code, it uses the hexToRgb() function
+  to convert the hex code into rgb for using it inside the rgba color format.
+ */
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+// Material Kit 2 React helper functions
+import hexToRgb from "assets/theme/functions/hexToRgb";
+
+function rgba(color, opacity) {
+  return `rgba(${hexToRgb(color)}, ${opacity})`;
+}
+
+export default rgba;

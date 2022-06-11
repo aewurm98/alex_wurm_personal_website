@@ -13,14 +13,12 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import App from "App";
+/**
+  The linearGradient() function helps you to create a linear gradient color background
+ */
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+function linearGradient(color, colorState, angle = 195) {
+  return `linear-gradient(${angle}deg, ${color}, ${colorState})`;
+}
+
+export default linearGradient;
