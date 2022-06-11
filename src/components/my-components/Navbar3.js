@@ -28,12 +28,11 @@ import breakpoints from "assets/theme/base/breakpoints";
 const siteLogo = <i class="fa-solid fa-basketball"></i>;
 
 //TODO: Investigate porential to increase span size to make clicking easier
-function Navbar2({
+function Navbar3({
   logo,
   brand,
   transparent,
   light,
-  action,
   sticky,
   relative,
   center,
@@ -85,11 +84,7 @@ function Navbar2({
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  // Adding useEffect for clicking outside of the Navbar
-  // TODO: Figure out why the EventListeners are preventing navigating to external links
-  // May need to add additional EventListener for link clicks, and build into the conditional logic of handleInteraction()
-  // More likely need to find a better way to handle exiting the navbar otherwise defeats purpose of links; otherwise fine when makes sense to remove
-  //TODO: Figure out how to get ScrollToTop working for name+logo, then clean up formatting
+  //TODO: Change functionality for handling clicks to close Navbar -- handleOutsideClick at the Container level
 
   useEffect(() => {
     function handleInteraction(evt) {
@@ -106,13 +101,6 @@ function Navbar2({
 
     window.addEventListener("click", handleInteraction);
   });
-
-  // Major modifications to Render Navbar Items function
-  //   const renderNavbarItems = routes.map(
-  //     ({ name, icon, href, route, collapse }) => <NavbarBase />
-  //   );
-
-  //TODO: Change functionality for handling clicks to close Navbar -- handleOutsideClick at the Container level
 
   return (
     <Container sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}>
@@ -265,14 +253,6 @@ function Navbar2({
                 </LinkS>
               </MKTypography>
 
-              {/* <MKTypography
-                variant="body2"
-                lineHeight={1}
-                color="inherit"
-                sx={{ alignSelf: "center", "& *": { verticalAlign: "middle" } }}
-              >
-                {siteLogo}
-              </MKTypography> */}
               <MKTypography
                 variant="button"
                 fontWeight="regular"
@@ -280,58 +260,11 @@ function Navbar2({
                 color={light ? "white" : "dark"}
                 sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
               >
-                {/* React Site */}
               </MKTypography>
-              {/* <MKTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
-          <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
-            {collapse && "keyboard_arrow_down"}
-          </Icon>
-        </MKTypography> */}
+
             </MKBox>
-            {/* {children && (
-        <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>
-          {children}
-        </Collapse>
-      )} */}
+
           </MKBox>
-          {/* <MKBox ml={{ xs: "auto", lg: 0 }}>
-            {action &&
-              (action.type === "internal" ? (
-                <MKButton
-                  component={Link}
-                  to={action.route}
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                  Added Navbar close on Link click
-                  onClick={goToSection(this.to)}
-                >
-                  {action.label}
-                </MKButton>
-              ) : (
-                <MKButton
-                  component="a"
-                  href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                  Added Navbar close on Link click
-                  onClick={closeMobileNavbar}
-                >
-                  {action.label}
-                </MKButton>
-              ))}
-          </MKBox> */}
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
             lineHeight={0}
@@ -400,23 +333,6 @@ function Navbar2({
               >
                 Learn More
               </LinkS>
-              {/* <MKTypography
-                variant="body2"
-                lineHeight={1}
-                color="inherit"
-                sx={{ alignSelf: "center", "& *": { verticalAlign: "middle" } }}
-              >
-                {siteLogo}
-              </MKTypography> */}
-              {/* <MKTypography
-                variant="button"
-                fontWeight="regular"
-                textTransform="capitalize"
-                color={light ? "white" : "dark"}
-                sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
-              >
-                React Site
-              </MKTypography> */}
             </MKBox>
           )}
         </MKBox>
@@ -426,47 +342,14 @@ function Navbar2({
 }
 
 // Setting default values for the props of DefaultNavbar
-Navbar2.defaultProps = {
+Navbar3.defaultProps = {
   logo: siteLogo,
   brand: "Alex Wurm",
   transparent: false,
   light: false,
-  action: false,
   sticky: true,
   relative: false,
   center: false,
 };
 
-// Typechecking props for the DefaultNavbar
-Navbar2.propTypes = {
-  logo: PropTypes.any,
-  brand: PropTypes.string,
-  routes: PropTypes.arrayOf(PropTypes.object).isRequired,
-  transparent: PropTypes.bool,
-  light: PropTypes.bool,
-  action: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.shape({
-      type: PropTypes.oneOf(["external", "internal"]).isRequired,
-      route: PropTypes.string.isRequired,
-      color: PropTypes.oneOf([
-        "primary",
-        "secondary",
-        "info",
-        "success",
-        "warning",
-        "error",
-        "dark",
-        "light",
-        "default",
-        "white",
-      ]),
-      label: PropTypes.string.isRequired,
-    }),
-  ]),
-  sticky: PropTypes.bool,
-  relative: PropTypes.bool,
-  center: PropTypes.bool,
-};
-
-export default Navbar2;
+export default Navbar3;
