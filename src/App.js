@@ -26,9 +26,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 //import Presentation from "layouts/pages/presentation";
 
-// MY added components
-import Navbar from "components/my-components/Navbar.js";
-
 // My added pages
 import Home from "pages/LandingPages/Home";
 import HeroSection from "pages/LandingPages/HeroSection";
