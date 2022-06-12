@@ -35,6 +35,14 @@ export default function App() {
   // https://blog.bitsrc.io/introduction-to-react-location-e84a5c19c5d8
   // Use one of the available packages (e.g., react-update-url-on-scroll to maintain scroll links but allow location pathname usage)
 
+  const sections = document.querySelectorAll('div');
+
+  sections.forEach( section => {
+    const sectionTop = section.offsetTop;
+    console.log(sectionTop)
+  }
+  )
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -46,5 +54,6 @@ export default function App() {
         <Route path="/learn-more" element={<Home />} />
       </Routes>
     </ThemeProvider>
+    
   );
 }
