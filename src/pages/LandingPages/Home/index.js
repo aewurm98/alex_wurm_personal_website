@@ -1,6 +1,6 @@
 // React Components
 import { useRef, useEffect, useState} from 'react';
-// import { useInView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 
 // My Components
 import Navbar from "components/my-components/Navbar.js";
