@@ -28,26 +28,22 @@ import theme from "assets/theme";
 
 // My added pages
 import Home from "pages/LandingPages/Home";
-import HeroSection from "pages/LandingPages/HeroSection";
-import Bio from "pages/LandingPages/Bio";
-import WorkExperience from "pages/LandingPages/WorkExperience";
-import Projects from "pages/LandingPages/Projects";
-import LearnMore from "pages/LandingPages/LearnMore";
-
-// Material Kit 2 React routes
-// import routes from "routes";
 
 export default function App() {
   //TODO: Fix all of the console log errors from browser inspection
-  //TODO: Implement Hash Links (https://stackoverflow.com/questions/40280369/use-anchors-with-react-router)
-  //TODO: Implement scroll lock to position is saved when refreshing the page
+  //TODO: Fix issue where after coming back from another website, starts at the top and scrolls all the way down
+  // https://blog.bitsrc.io/introduction-to-react-location-e84a5c19c5d8
+  // Use one of the available packages (e.g., react-update-url-on-scroll to maintain scroll links but allow location pathname usage)
 
-  //FIXME: Rip out Default Navbar and Centered Footer entirely; replicate similar but simpler components and use normal linking
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />}  />
+        <Route path="/about" element={<Home />} />
+        <Route path="/work-experience" element={<Home />} />
+        <Route path="/projects" element={<Home />} />
+        <Route path="/learn-more" element={<Home />} />
       </Routes>
     </ThemeProvider>
   );

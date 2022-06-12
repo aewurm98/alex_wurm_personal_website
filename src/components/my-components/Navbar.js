@@ -29,7 +29,14 @@ const siteLogo = <i class="fa-solid fa-basketball"></i>;
 const navItemLogo1 = <i class="fa-solid fa-circle-user"></i>;
 const navItemLogo2 = <i class="fa-solid fa-briefcase"></i>;
 const navItemLogo3 = <i class="fa-solid fa-code"></i>;
-const navItemLogo4 = <i class="fa-solid fa-circle-info"></i>;
+const navItemLogo4 = <i class="fa-solid fa-comments"></i>;
+
+// Routes
+const routeHome = "home";
+const routeAbout = "about";
+const routeWorkExperience = "work-experience";
+const routeProjects = "projects";
+const routeLearnMore = "learn-more"
 
 //TODO: Investigate porential to increase span size to make clicking easier
 function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
@@ -111,9 +118,9 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
               // Added Navbar close on Link click
               onClick={closeMobileNavbar}
             >
-              <MKBox mr={1} component={Link} to="home">
+              <MKBox mr={1} component={Link} to={routeHome}>
                 <LinkS
-                  to="home"
+                  to={routeHome}
                   smooth={true}
                   duration={500}
                   spy={true}
@@ -123,14 +130,14 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                   {siteLogo}
                 </LinkS>
               </MKBox>
-              <MKBox component={Link} to="home">
+              <MKBox component={Link} to={routeHome}>
                 <MKTypography
                   variant="button"
                   fontWeight="bold"
                   color={light ? "white" : "dark"}
                 >
                   <LinkS
-                    to="home"
+                    to={routeHome}
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -168,7 +175,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                   mx="auto"
                 >
                   <LinkS
-                    to="about"
+                    to={routeAbout}
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -185,7 +192,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                   mx="auto"
                 >
                   <LinkS
-                    to="work-experience"
+                    to={routeWorkExperience}
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -202,7 +209,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                   mx="auto"
                 >
                   <LinkS
-                    to="projects"
+                    to={routeProjects}
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -219,7 +226,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                   mx="auto"
                 >
                   <LinkS
-                    to="learn-more"
+                    to={routeLearnMore}
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -273,7 +280,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="about"
+                      to={routeAbout}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -290,7 +297,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="work-experience"
+                      to={routeWorkExperience}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -307,7 +314,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="projects"
+                      to={routeProjects}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -324,7 +331,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="learn-more"
+                      to={routeLearnMore}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -343,7 +350,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="about"
+                      to={routeAbout}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -360,7 +367,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="work-experience"
+                      to={routeWorkExperience}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -377,7 +384,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="projects"
+                      to={routeProjects}
                       smooth={true}
                       duration={500}
                       spy={true}
@@ -394,7 +401,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                     my="auto"
                   >
                     <LinkS
-                      to="learn-more"
+                      to={routeLearnMore}
                       smooth={true}
                       duration={500}
                       spy={true}

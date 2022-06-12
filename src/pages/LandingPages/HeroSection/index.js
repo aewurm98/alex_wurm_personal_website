@@ -180,7 +180,7 @@ function HeroSection() {
                       component="a"
                       variant="h4"
                       color="black"
-                      href="https://twitter.com/aewurm98"
+                      href="https://twitter.com/aewurm98/"
                       mr={3}
                     >
                       <i className="fab fa-twitter" />
@@ -198,7 +198,7 @@ function HeroSection() {
                       component="a"
                       variant="h4"
                       color="black"
-                      href="https://github.com/aewurm98"
+                      href="https://github.com/aewurm98/"
                       mr={1}
                     >
                       <i class="fa-brands fa-github"></i>
