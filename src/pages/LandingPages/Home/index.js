@@ -1,5 +1,5 @@
 // React Components
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { useInView } from "react-intersection-observer";
 import { Waypoint } from "react-waypoint";
 
@@ -30,11 +30,29 @@ useEffect(() => {
 
 }, [])  
 
-const currentSection = useRef(1);
+// const [currentSection, setCurrentSection] = useState("home");
 
-function handleSectionChange(n) {
-  currentSection.current = n;
-}
+// const sectionRef = useCallback(n => {
+//   setCurrentSection(n)
+// },[])
+
+// const currentSection = useRef(1);
+
+// // const [,setForceUpdate] = useState(Date.now());
+
+// function handleSectionChange(n) {
+//   currentSection.current = n;
+// }
+
+// useEffect(() => {
+//   setTimeout(() =>{
+//     setForceUpdate();
+//     console.log(currentSection)
+//   }, 500)
+//   })
+
+// const firstTier = document.documentElement.childNodes;
+// console.log(firstTier)
 
 // const [currentSection, setCurrentSection] = useState(null)
 
@@ -71,7 +89,7 @@ function handleSectionChange(n) {
       {/* TODO: Find alternative to Waypoints that allows changing Navbar elements on scroll 
       and allows locking position for when navigating back to site from external link 
       https://www.smashingmagazine.com/2020/11/react-useref-hook/ */}
-      <Navbar currentSection="placeholder"/>
+      <Navbar currentSection={"placeholder"}/>
 
       {/* <Waypoint onEnter={handleSectionChange(1)}> */}
         <div className="home" 
@@ -92,6 +110,7 @@ function handleSectionChange(n) {
         {/* <Waypoint onEnter={handleSectionChange(3)}> */}
         <div className="work-experience" 
         // ref={WorkRef}
+        // ref={sectionRef}
         >
           <WorkExperience />
         </div>
@@ -99,6 +118,7 @@ function handleSectionChange(n) {
       {/* <Waypoint onEnter={handleSectionChange(4)}> */}
         <div className="projects" 
         // ref={ProjectRef}
+        // ref={sectionRef}
         >
           <Projects />
         </div>
@@ -106,6 +126,7 @@ function handleSectionChange(n) {
         {/* <Waypoint onEnter={handleSectionChange(5)}>   */}
         <div className="learn-more" 
         // ref={LearnRef}
+        // ref={sectionRef}
         >
           <LearnMore />
         </div>
