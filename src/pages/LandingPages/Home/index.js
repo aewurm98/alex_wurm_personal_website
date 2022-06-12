@@ -38,34 +38,43 @@ function Home() {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
   // }, []);
+
+  const HeroRef = useRef(null);
+  const BioRef = useRef(null);
+  const WorkRef = useRef(null);
+  const ProjectsRef = useRef(null);
+  const LearnRef = useRef(null);
+  const FooterRef = useRef(null);
   
   return (
     <>
       <Navbar currentSection="about"/>
-      <div className="home">
-        {/* this.homeRef = useRef(null) */}
+      <div className="home" ref={HeroRef}>
         <HeroSection />
+        {/* {console.log(HeroRef.current.offsetTop)} */}
       </div>
-      <div className="about">
+      <div className="about" ref={BioRef}>
         <Bio />
+        {console.log(BioRef)}
       </div>
-      <div className="work-experience">
+      <div className="work-experience" ref={WorkRef}>
         <WorkExperience />
+        {console.log(WorkRef)}
       </div>
-      <div className="projects">
+      <div className="projects" ref={ProjectsRef}>
         <Projects />
+        {console.log(ProjectsRef)}
       </div>
-      <div className="learn-more">
+      <div className="learn-more" ref={LearnRef}>
         <LearnMore />
+        {console.log(LearnRef)}
       </div>
-      <div className="footer">
+      <div className="footer" ref={FooterRef}>
         <Footer />
+        {console.log(FooterRef)}
       </div>
     </>
   );
 }
-
-// Used to determine section YOffsets
-console.log(this.homeRef)
 
 export default Home;
