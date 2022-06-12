@@ -1,3 +1,7 @@
+// React Components
+import { useRef, useEffect, useState} from 'react';
+// import { useInView } from 'react-intersection-observer';
+
 // My Components
 import Navbar from "components/my-components/Navbar.js";
 import Footer from "components/my-components/Footer.js";
@@ -19,7 +23,7 @@ window.addEventListener("click", handleClick);
 function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar currentSection="about"/>
       <div className="home">
         <HeroSection />
       </div>

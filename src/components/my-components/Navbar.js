@@ -39,7 +39,7 @@ const routeProjects = "projects";
 const routeLearnMore = "learn-more"
 
 //TODO: Investigate porential to increase span size to make clicking easier
-function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
+function Navbar({ logo, brand, transparent, light, sticky, relative, center, currentSection}) {
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
@@ -170,9 +170,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
               >
                 <MKTypography
                   variant="button"
-                  fontWeight="medium"
+                  fontWeight = {(currentSection == "about") ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
+                  p={1}
+                  sx = {{ borderBottom: (currentSection == "about") ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeAbout}
@@ -187,9 +189,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight="medium"
+                  fontWeight = {(currentSection == "work-experience") ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
+                  p={1}
+                  sx = {{ borderBottom: (currentSection == "work-experience") ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeWorkExperience}
@@ -204,9 +208,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight="medium"
+                  fontWeight = {(currentSection == "projects") ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
+                  p={1}
+                  sx = {{ borderBottom: (currentSection == "projects") ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeProjects}
@@ -221,9 +227,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight="medium"
+                  fontWeight = {(currentSection == "learn-more") ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
+                  p={1}
+                  sx = {{ borderBottom: (currentSection == "learn-more") ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeLearnMore}
@@ -430,6 +438,7 @@ Navbar.defaultProps = {
   sticky: true,
   relative: false,
   center: false,
+  currentSection: "home"
 };
 
 export default Navbar;
