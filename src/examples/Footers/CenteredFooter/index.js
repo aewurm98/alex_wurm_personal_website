@@ -151,6 +151,10 @@ CenteredFooter.defaultProps = {
       link: "https://www.instagram.com/awurm98/",
     },
     {
+      icon: <TwitterIcon fontSize="small" />,
+      link: "https://twitter.com/aewurm98",
+    },
+    {
       icon: <LinkedInIcon fontSize="small" />,
       link: "https://www.linkedin.com/in/alex-wurm/",
     },

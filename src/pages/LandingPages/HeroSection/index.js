@@ -180,6 +180,15 @@ function HeroSection() {
                       component="a"
                       variant="h4"
                       color="black"
+                      href="https://twitter.com/aewurm98"
+                      mr={3}
+                    >
+                      <i className="fab fa-twitter" />
+                    </MKTypography>
+                    <MKTypography
+                      component="a"
+                      variant="h4"
+                      color="black"
                       href="https://www.linkedin.com/in/alex-wurm/"
                       mr={3}
                     >

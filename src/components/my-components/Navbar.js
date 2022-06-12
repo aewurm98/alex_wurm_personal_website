@@ -65,30 +65,15 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  //TODO: Change functionality for handling clicks to close Navbar -- handleOutsideClick at the Container level
-
-  // useEffect(() => {
-  //   function handleInteraction(evt) {
-  //     evt.stopPropagation();
-  //     console.log(evt);
-  //     if (
-  //       evt.target.nodeName !== "SPAN" &&
-  //       evt.target.nodeName !== "I" &&
-  //       evt.target.nodeName !== "svg"
-  //     ) {
-  //       setMobileNavbar(false);
-  //     }
-  //   }
-
-  //   window.addEventListener("click", handleInteraction);
-  // });
-
   return (
-    <OutsideClickHandler onOutsideClick={() => setMobileNavbar(false)}>
+      
       //Overall Navbar
       <Container
         sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}
       >
+        {/* /Makes sure Navbar closes when clicking out */}
+        <OutsideClickHandler onOutsideClick={() => setMobileNavbar(false)}>
+
         {/* Core Navbar element */}
         <MKBox
           py={1}
@@ -424,8 +409,8 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center }) {
             )}
           </MKBox>
         </MKBox>
+        </OutsideClickHandler>
       </Container>
-    </OutsideClickHandler>
   );
 }
 
