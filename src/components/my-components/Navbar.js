@@ -38,6 +38,13 @@ const routeWorkExperience = "work-experience";
 const routeProjects = "projects";
 const routeLearnMore = "learn-more"
 
+// Sections
+const homeSection = 1;
+const bioSection = 2;
+const workSection = 3;
+const projectsSection = 4;
+const learnSection = 5;
+
 //TODO: Investigate porential to increase span size to make clicking easier
 function Navbar({ logo, brand, transparent, light, sticky, relative, center, currentSection}) {
   const [mobileNavbar, setMobileNavbar] = useState(false);
@@ -170,11 +177,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
               >
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == "about") ? "bold" : "regular"}
+                  fontWeight = {(currentSection == {bioSection}) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == "about") ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == {bioSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeAbout}
@@ -189,11 +196,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == "work-experience") ? "bold" : "regular"}
+                  fontWeight = {(currentSection == {workSection}) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == "work-experience") ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == {workSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeWorkExperience}
@@ -208,11 +215,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == "projects") ? "bold" : "regular"}
+                  fontWeight = {(currentSection == {projectsSection}) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == "projects") ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == {projectsSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeProjects}
@@ -227,11 +234,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == "learn-more") ? "bold" : "regular"}
+                  fontWeight = {(currentSection == {learnSection}) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == "learn-more") ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == {learnSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeLearnMore}
