@@ -13,15 +13,28 @@ import WorkExperience from "pages/LandingPages/WorkExperience";
 import Projects from "pages/LandingPages/Projects";
 import LearnMore from "pages/LandingPages/LearnMore";
 
-// Used to troubleshoot bugs in navigation
-function handleClick(event) {
-  console.log(event);
-  console.log(window.location);
-}
-
-window.addEventListener("click", handleClick);
-
 function Home() {
+
+// Used to troubleshoot bugs in navigation
+
+useEffect(() => {
+
+  function handleClick(event) {
+    console.log(event);
+    console.log(window.location);
+  }
+  
+  window.addEventListener("click", handleClick);
+
+  return () => window.removeEventListener("click", handleClick);
+
+}, [])  
+
+const currentSection = useRef(1);
+
+function handleSectionChange(n) {
+  currentSection.current = n;
+}
 
 // const [currentSection, setCurrentSection] = useState(null)
 
@@ -31,40 +44,72 @@ function Home() {
 //   const ProjectRef = useRef(null);
 //   const LearnRef = useRef(null);
 
+// const sectionRef = useRef(1);
+
+// function handleSectionChange(n) {
+//   sectionRef.current = n;
+// }
+
+// // For troubleshooting
+// useEffect(() => {
+//   function handleScroll(evt) {
+//     sectionRef.current++;
+//     console.log({sectionRef})
+//     console.log(evt.target)
+//   }
+  
+//   window.addEventListener("scroll", handleScroll)
+
+//   sectionRef = 1
+
+//   return () => window.removeEventListener("resize", handleScroll);
+  
+//   }, [])
+
   return (
     <>
       {/* TODO: Find alternative to Waypoints that allows changing Navbar elements on scroll 
-      and allows locking position for when navigating back to site from external link */}
+      and allows locking position for when navigating back to site from external link 
+      https://www.smashingmagazine.com/2020/11/react-useref-hook/ */}
       <Navbar currentSection="placeholder"/>
 
+      {/* <Waypoint onEnter={handleSectionChange(1)}> */}
         <div className="home" 
         // ref={HeroRef}
+        // ref = {sectionRef}
         >
           <HeroSection />
         </div>
-
+      {/* </Waypoint>   */}
+      {/* <Waypoint onEnter={handleSectionChange(2)}> */}
         <div className="about" 
         // ref={BioRef}
+        // ref={sectionRef}
         >
           <Bio />
         </div>
+        {/* </Waypoint>   */}
+        {/* <Waypoint onEnter={handleSectionChange(3)}> */}
         <div className="work-experience" 
         // ref={WorkRef}
         >
           <WorkExperience />
         </div>
-
+      {/* </Waypoint>   */}
+      {/* <Waypoint onEnter={handleSectionChange(4)}> */}
         <div className="projects" 
         // ref={ProjectRef}
         >
           <Projects />
         </div>
-
+        {/* </Waypoint> */}
+        {/* <Waypoint onEnter={handleSectionChange(5)}>   */}
         <div className="learn-more" 
         // ref={LearnRef}
         >
           <LearnMore />
         </div>
+        {/* </Waypoint>   */}
       <div className="footer">
         <Footer />
       </div>

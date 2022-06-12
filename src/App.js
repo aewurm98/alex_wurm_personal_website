@@ -29,6 +29,8 @@ import theme from "assets/theme";
 // My added pages
 import Home from "pages/LandingPages/Home";
 
+// TODO: Cleanup -- all added event listeners should also be removed
+
 export default function App() {
   //TODO: Fix all of the console log errors from browser inspection
   //TODO: Fix issue where after coming back from another website, starts at the top and scrolls all the way down
@@ -37,11 +39,11 @@ export default function App() {
 
   const sections = document.querySelectorAll('div');
 
-  sections.forEach( section => {
-    const sectionTop = section.offsetTop;
-    console.log(sectionTop)
-  }
-  )
+  // sections.forEach( section => {
+  //   const sectionTop = section.offsetTop;
+  //   console.log(sectionTop)
+  // }
+  // )
 
   return (
     <ThemeProvider theme={theme}>
@@ -54,6 +56,6 @@ export default function App() {
         <Route path="/learn-more" element={<Home />} />
       </Routes>
     </ThemeProvider>
-    
+
   );
 }
