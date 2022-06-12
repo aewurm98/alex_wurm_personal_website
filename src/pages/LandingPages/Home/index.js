@@ -21,10 +21,29 @@ function handleClick(event) {
 window.addEventListener("click", handleClick);
 
 function Home() {
+
+  // Intersection Observer Functionality
+  // const { ref: myRef, inView: sectionIsVisible } = useInView();
+
+  // Determine scroll position for current section
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset;
+  //   setScrollPosition(position);
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+  
   return (
     <>
       <Navbar currentSection="about"/>
       <div className="home">
+        {/* this.homeRef = useRef(null) */}
         <HeroSection />
       </div>
       <div className="about">
@@ -45,5 +64,8 @@ function Home() {
     </>
   );
 }
+
+// Used to determine section YOffsets
+console.log(this.homeRef)
 
 export default Home;
