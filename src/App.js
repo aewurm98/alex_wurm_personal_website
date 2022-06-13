@@ -19,7 +19,7 @@ import { useEffect, useState, useRef } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 // other react components
-import { useSWR } from 'swr';
+// import useSWR from 'swr';
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -33,8 +33,6 @@ import theme from "assets/theme";
 import Home from "pages/LandingPages/Home";
 
 // TODO: Cleanup -- all added event listeners should also be removed
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function App() {
   //TODO: Fix all of the console log errors from browser inspection
@@ -50,15 +48,23 @@ export default function App() {
   // }
   // )
 
-  const { data, error } = useSWR (
-    "http://localhost:3000/",
-    fetcher
-  );
+  const [loading,setLoading] = useState();
 
-  if (error) return "An error has occurred.";
-  if (!data) return "Loading...";
-  
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    },1500)
+  },[])
+
   return (
+    
+    loading ?
+
+    <p>Loading...</p>
+
+    :
+    
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Routes>
