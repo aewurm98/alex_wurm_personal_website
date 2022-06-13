@@ -39,14 +39,13 @@ const routeProjects = "projects";
 const routeLearnMore = "learn-more"
 
 // Sections
-const homeSection = 1;
 const bioSection = 2;
 const workSection = 3;
 const projectsSection = 4;
 const learnSection = 5;
 
 //TODO: Investigate porential to increase span size to make clicking easier
-function Navbar({ logo, brand, transparent, light, sticky, relative, center, currentSection}) {
+function Navbar({ logo, brand, transparent, light, sticky, relative, center, getSection}) {
   const [mobileNavbar, setMobileNavbar] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
@@ -78,6 +77,14 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
+
+  const [currentSection, setCurrentSection] = useState(1);
+
+  useEffect(() => {
+    // console.log(getSection())
+    setCurrentSection(getSection())
+    // console.log("Updating Section")
+  }, [getSection])
 
   return (
       
@@ -177,11 +184,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
               >
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == {bioSection}) ? "bold" : "regular"}
+                  fontWeight = {(currentSection == 2) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == {bioSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == 2) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeAbout}
@@ -196,11 +203,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == {workSection}) ? "bold" : "regular"}
+                  fontWeight = {(currentSection == 3) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == {workSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == 3) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeWorkExperience}
@@ -215,11 +222,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == {projectsSection}) ? "bold" : "regular"}
+                  fontWeight = {(currentSection == 4) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == {projectsSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == 4) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeProjects}
@@ -234,11 +241,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, cur
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == {learnSection}) ? "bold" : "regular"}
+                  fontWeight = {(currentSection == 5) ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == {learnSection}) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: (currentSection == 5) ? "2px solid #90a4ae" : "2px solid transparent" }}
                 >
                   <LinkS
                     to={routeLearnMore}

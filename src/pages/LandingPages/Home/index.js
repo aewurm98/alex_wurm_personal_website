@@ -84,54 +84,102 @@ useEffect(() => {
   
 //   }, [])
 
+const [currentSection, setCurrentSection] = useState(1);
+
+const getSection = useCallback(() => {
+  return currentSection;
+}, [currentSection])
+
+const {homeRef, homeInView, homeEntry } = useInView({
+  fallbackInView: true,
+  threshold: 0.51,
+})
+
+const {bioRef, bioInView, bioEntry } = useInView({
+  fallbackInView: true,
+  threshold: 0.51,
+})
+
+const {workRef, workInView, workEntry } = useInView({
+  fallbackInView: true,
+  threshold: 0.51,
+})
+
+const {projectRef, projectInView, projectEntry } = useInView({
+  fallbackInView: true,
+  threshold: 0.51,
+})
+
+const {learnRef, learnInView, learnEntry } = useInView({
+  fallbackInView: true,
+  threshold: 0.51,
+})
+
+useEffect(() => {
+
+  function handleScroll() {
+    // console.log(event);
+    // console.log("scrolling");
+    console.log(homeInView)
+    console.log(bioInView)
+    console.log(workInView)
+    console.log(projectInView)
+    console.log(learnInView)
+    // homeInView ? setCurrentSection(currentSection => 1)
+    //   : bioInView ? setCurrentSection(currentSection => 2)
+    //   : workInView ? setCurrentSection(currentSection => 3)
+    //   : projectInView ? setCurrentSection(currentSection => 4)
+    //   : learnInView ? setCurrentSection(currentSection => 5)
+    //   : setCurrentSection(currentSection => 6)
+    console.log(getSection())
+  }
+  
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+
+},)  
+
   return (
     <>
       {/* TODO: Find alternative to Waypoints that allows changing Navbar elements on scroll 
       and allows locking position for when navigating back to site from external link 
       https://www.smashingmagazine.com/2020/11/react-useref-hook/ */}
-      <Navbar currentSection={"placeholder"}/>
+      <Navbar getSection={getSection}/>
 
-      {/* <Waypoint onEnter={handleSectionChange(1)}> */}
         <div className="home" 
-        // ref={HeroRef}
-        // ref = {sectionRef}
+        // onChange = {() => setCurrentSection(currentSection => 1)}
+        ref={homeRef}
         >
           <HeroSection />
         </div>
-      {/* </Waypoint>   */}
-      {/* <Waypoint onEnter={handleSectionChange(2)}> */}
         <div className="about" 
-        // ref={BioRef}
-        // ref={sectionRef}
+        // onChange = {() => setCurrentSection(currentSection => 2)}
+        ref={bioRef}
         >
           <Bio />
         </div>
-        {/* </Waypoint>   */}
-        {/* <Waypoint onEnter={handleSectionChange(3)}> */}
         <div className="work-experience" 
-        // ref={WorkRef}
-        // ref={sectionRef}
+        // onChange = {() => setCurrentSection(currentSection => 3)}
+        ref={workRef}
         >
           <WorkExperience />
         </div>
-      {/* </Waypoint>   */}
-      {/* <Waypoint onEnter={handleSectionChange(4)}> */}
         <div className="projects" 
-        // ref={ProjectRef}
-        // ref={sectionRef}
+        // onChange = {() => setCurrentSection(currentSection => 4)}
+        ref={projectRef}
         >
           <Projects />
         </div>
-        {/* </Waypoint> */}
-        {/* <Waypoint onEnter={handleSectionChange(5)}>   */}
         <div className="learn-more" 
-        // ref={LearnRef}
-        // ref={sectionRef}
+        // onChange = {() => setCurrentSection(currentSection => 5)}
+        ref={learnRef}
         >
           <LearnMore />
         </div>
-        {/* </Waypoint>   */}
-      <div className="footer">
+      <div className="footer" 
+        // onChange = {() => setCurrentSection(currentSection => 6)}
+      >
         <Footer />
       </div>
     </>
