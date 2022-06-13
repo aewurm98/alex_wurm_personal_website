@@ -18,6 +18,9 @@ import { useEffect, useState, useRef } from "react";
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
+// other react components
+import { useSWR } from 'swr';
+
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -31,13 +34,15 @@ import Home from "pages/LandingPages/Home";
 
 // TODO: Cleanup -- all added event listeners should also be removed
 
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 export default function App() {
   //TODO: Fix all of the console log errors from browser inspection
   //TODO: Fix issue where after coming back from another website, starts at the top and scrolls all the way down
   // https://blog.bitsrc.io/introduction-to-react-location-e84a5c19c5d8
   // Use one of the available packages (e.g., react-update-url-on-scroll to maintain scroll links but allow location pathname usage)
 
-  const sections = document.querySelectorAll('div');
+  // const sections = document.querySelectorAll('div');
 
   // sections.forEach( section => {
   //   const sectionTop = section.offsetTop;
@@ -45,6 +50,14 @@ export default function App() {
   // }
   // )
 
+  const { data, error } = useSWR (
+    "http://localhost:3000/",
+    fetcher
+  );
+
+  if (error) return "An error has occurred.";
+  if (!data) return "Loading...";
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
