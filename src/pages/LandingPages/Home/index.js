@@ -1,7 +1,7 @@
 // React Components
 import { useRef, useEffect, useState, useCallback } from "react";
 import { useInView } from "react-intersection-observer";
-import { Waypoint } from "react-waypoint";
+// import { Waypoint } from "react-waypoint";
 
 // My Components
 import Navbar from "components/my-components/Navbar.js";
@@ -84,33 +84,41 @@ useEffect(() => {
   
 //   }, [])
 
+const sections = document.querySelectorAll("div")[0].children;
+
+console.log(sections.length)
+
+for (let item of sections) {
+  console.log(item.id)
+}
+
 const [currentSection, setCurrentSection] = useState(1);
 
 const getSection = useCallback(() => {
   return currentSection;
 }, [currentSection])
 
-const {homeRef, homeInView, homeEntry } = useInView({
+const {homeRef, homeInView } = useInView({
   fallbackInView: true,
   threshold: 0.51,
 })
 
-const {bioRef, bioInView, bioEntry } = useInView({
+const {bioRef, bioInView } = useInView({
   fallbackInView: true,
   threshold: 0.51,
 })
 
-const {workRef, workInView, workEntry } = useInView({
+const {workRef, workInView } = useInView({
   fallbackInView: true,
   threshold: 0.51,
 })
 
-const {projectRef, projectInView, projectEntry } = useInView({
+const {projectRef, projectInView } = useInView({
   fallbackInView: true,
   threshold: 0.51,
 })
 
-const {learnRef, learnInView, learnEntry } = useInView({
+const {learnRef, learnInView } = useInView({
   fallbackInView: true,
   threshold: 0.51,
 })
@@ -120,18 +128,18 @@ useEffect(() => {
   function handleScroll() {
     // console.log(event);
     // console.log("scrolling");
-    console.log(homeInView)
-    console.log(bioInView)
-    console.log(workInView)
-    console.log(projectInView)
-    console.log(learnInView)
+    // console.log(homeInView)
+    // console.log(bioInView)
+    // console.log(workInView)
+    // console.log(projectInView)
+    // console.log(learnInView)
     // homeInView ? setCurrentSection(currentSection => 1)
     //   : bioInView ? setCurrentSection(currentSection => 2)
     //   : workInView ? setCurrentSection(currentSection => 3)
     //   : projectInView ? setCurrentSection(currentSection => 4)
     //   : learnInView ? setCurrentSection(currentSection => 5)
     //   : setCurrentSection(currentSection => 6)
-    console.log(getSection())
+    // console.log(getSection())
   }
   
   window.addEventListener("scroll", handleScroll);
@@ -140,11 +148,17 @@ useEffect(() => {
 
 },)  
 
+
+
   return (
     <>
+    
       {/* TODO: Find alternative to Waypoints that allows changing Navbar elements on scroll 
       and allows locking position for when navigating back to site from external link 
-      https://www.smashingmagazine.com/2020/11/react-useref-hook/ */}
+      https://www.smashingmagazine.com/2020/11/react-useref-hook/ 
+      TODO: Consider Framer Motion library*/}
+
+
       <Navbar getSection={getSection}/>
 
         <div className="home" 
