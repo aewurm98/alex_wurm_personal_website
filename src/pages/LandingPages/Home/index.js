@@ -13,6 +13,9 @@ import WorkExperience from "pages/LandingPages/WorkExperience";
 import Projects from "pages/LandingPages/Projects";
 import LearnMore from "pages/LandingPages/LearnMore";
 
+// My Styles
+import 'App.css'
+
 function Home() {
 
 // Used to troubleshoot bugs in navigation

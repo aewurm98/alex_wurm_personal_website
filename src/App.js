@@ -20,10 +20,15 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 // other react components
 // import useSWR from 'swr';
+import PacmanLoader from "react-spinners/HashLoader";
+import { css } from "@emotion/react"
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+
+// Material Kit 2 Components
+import MKBox from "components/MKBox";
 
 // Material Kit 2 React themes
 import theme from "assets/theme";
@@ -31,6 +36,7 @@ import theme from "assets/theme";
 
 // My added pages
 import Home from "pages/LandingPages/Home";
+import { teal } from "@mui/material/colors";
 
 // TODO: Cleanup -- all added event listeners should also be removed
 
@@ -54,15 +60,33 @@ export default function App() {
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    },1500)
+    },15000)
   },[])
 
   return (
     
     loading ?
 
-    <p>Loading...</p>
+    // <ThemeProvider theme={theme}>
+    // <CssBaseline />
 
+    <div className = "Loading">
+    <PacmanLoader
+    loading={loading}
+    color="teal"
+    size={250}
+    // css={{
+    //   display: "flex",
+    //   width: "100%",
+    //   justifyContent: "center",
+    //   alignItems: "center",
+    //   padding: {xs: 350, s: 350, md: 350, lg: 350},
+    //   mt: 100
+    // }}
+    />
+    </div>
+
+    // </ThemeProvider>
     :
     
     <ThemeProvider theme={theme}>
