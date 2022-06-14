@@ -61,14 +61,21 @@ export default function App() {
   const year = new Date().getFullYear();
 
   //TODO: Find alternative method of loading spinner that doesn't use react-spinner and allows formatting
-  const [loading,setLoading] = useState();
+  const [loading,setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    },2000)
+
+    function handleDOMLoaded() { 
+    setLoading(false)
+    console.log("Page is loaded")
+    }
+
+  window.addEventListener("load", handleDOMLoaded);
+
+  return () => window.removeEventListener("load", handleDOMLoaded);
+
   },[])
+
 
   return (
 
