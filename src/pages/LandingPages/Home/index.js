@@ -136,6 +136,7 @@ useEffect(() => {
     //   : learnInView ? setCurrentSection(currentSection => 5)
     //   : setCurrentSection(currentSection => 6)
     // console.log(getSection())
+    console.log(window.pageYOffset)
   }
   
   window.addEventListener("scroll", handleScroll);
@@ -151,7 +152,13 @@ useEffect(() => {
     function handleAssetsLoaded() {
       console.log("Page is loaded");
       const sections = document.querySelectorAll("div")[0].children;
-      console.log(sections.length);
+      console.log(sections[0].children[1].className, sections[0].children[1].offsetTop);
+      console.log(sections[0].children[2].className, sections[0].children[2].offsetTop);
+      console.log(sections[0].children[3].className, sections[0].children[3].offsetTop);
+      console.log(sections[0].children[4].className, sections[0].children[4].offsetTop);
+      console.log(sections[0].children[5].className, sections[0].children[5].offsetTop);
+      console.log(sections[0].children[6].className, sections[0].children[6].offsetTop);
+
     }
 
     window.addEventListener("load", handleAssetsLoaded);
@@ -178,7 +185,7 @@ useEffect(() => {
       https://www.smashingmagazine.com/2020/11/react-useref-hook/ 
       TODO: Consider Framer Motion library*/}
 
-      
+      {/*TODO: Now that DOM rendering order is resolved; fix the ref/state parameters based on window.pageYOffset vs. elements OffsetTop */}
 
       <Navbar getSection={getSection}/>
 
