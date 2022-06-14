@@ -1,6 +1,13 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Alex Wurm",
+  "name": "Alex Wurm Technical Experience Portfolio",
+  "description": "Site containing information about the work experience, side projects, etc. of Alex Wurm",
+  "language": "en-US",
+  "content-scripts": [
+    {
+      "run_at": "document_idle"
+    }
+  ],
   "icons": [
     {
       "src": "favicon.ico",

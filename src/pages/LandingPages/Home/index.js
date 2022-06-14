@@ -85,13 +85,9 @@ useEffect(() => {
   
 //   }, [])
 
-const sections = document.querySelectorAll("div")[0].children;
-
-console.log(sections.length)
-
-for (let item of sections) {
-  console.log(item.id)
-}
+// for (let item of sections) {
+//   console.log(item.id)
+// }
 
 const [currentSection, setCurrentSection] = useState(1);
 
@@ -127,8 +123,7 @@ const {learnRef, learnInView } = useInView({
 useEffect(() => {
 
   function handleScroll() {
-    // console.log(event);
-    // console.log("scrolling");
+    console.log("scrolling");
     // console.log(homeInView)
     // console.log(bioInView)
     // console.log(workInView)
@@ -150,6 +145,30 @@ useEffect(() => {
 },)  
 
 
+// https://stackoverflow.com/questions/43233115/chrome-content-scripts-arent-working-domcontentloaded-listener-does-not-execut
+
+  useEffect(() => {
+    function handleAssetsLoaded() {
+      console.log("Page is loaded");
+      const sections = document.querySelectorAll("div")[0].children;
+      console.log(sections.length);
+    }
+
+    window.addEventListener("load", handleAssetsLoaded);
+
+    return () => window.removeEventListener("load", handleAssetsLoaded);
+  }, []);
+
+
+
+// if (sections[0].className !== "app") {
+//   console.log(sections[0].children.item(2).className);
+//   console.log(sections[0].children.item(2).offsetTop);
+// }
+// else {
+//   console.log("loading")
+// }
+
 
   return (
     <>
@@ -159,6 +178,7 @@ useEffect(() => {
       https://www.smashingmagazine.com/2020/11/react-useref-hook/ 
       TODO: Consider Framer Motion library*/}
 
+      
 
       <Navbar getSection={getSection}/>
 
