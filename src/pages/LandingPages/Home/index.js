@@ -89,82 +89,64 @@ useEffect(() => {
 //   console.log(item.id)
 // }
 
-const [currentSection, setCurrentSection] = useState(1);
+// const [currentSection, setCurrentSection] = useState(1);
 
-const getSection = useCallback(() => {
-  return currentSection;
-}, [currentSection])
+// const getSection = useCallback(() => {
+//   return currentSection;
+// }, [currentSection])
 
-const {homeRef, homeInView } = useInView({
-  fallbackInView: true,
-  threshold: 0.51,
-})
+// const {homeRef, homeInView } = useInView({
+//   fallbackInView: true,
+//   threshold: 0.51,
+// })
 
-const {bioRef, bioInView } = useInView({
-  fallbackInView: true,
-  threshold: 0.51,
-})
+// const {bioRef, bioInView } = useInView({
+//   fallbackInView: true,
+//   threshold: 0.51,
+// })
 
-const {workRef, workInView } = useInView({
-  fallbackInView: true,
-  threshold: 0.51,
-})
+// const {workRef, workInView } = useInView({
+//   fallbackInView: true,
+//   threshold: 0.51,
+// })
 
-const {projectRef, projectInView } = useInView({
-  fallbackInView: true,
-  threshold: 0.51,
-})
+// const {projectRef, projectInView } = useInView({
+//   fallbackInView: true,
+//   threshold: 0.51,
+// })
 
-const {learnRef, learnInView } = useInView({
-  fallbackInView: true,
-  threshold: 0.51,
-})
+// const {learnRef, learnInView } = useInView({
+//   fallbackInView: true,
+//   threshold: 0.51,
+// })
 
-useEffect(() => {
+// useEffect(() => {
 
-  function handleScroll() {
-    console.log("scrolling");
-    // console.log(homeInView)
-    // console.log(bioInView)
-    // console.log(workInView)
-    // console.log(projectInView)
-    // console.log(learnInView)
-    // homeInView ? setCurrentSection(currentSection => 1)
-    //   : bioInView ? setCurrentSection(currentSection => 2)
-    //   : workInView ? setCurrentSection(currentSection => 3)
-    //   : projectInView ? setCurrentSection(currentSection => 4)
-    //   : learnInView ? setCurrentSection(currentSection => 5)
-    //   : setCurrentSection(currentSection => 6)
-    // console.log(getSection())
-    console.log(window.pageYOffset)
-  }
+//   function handleScroll() {
+//     console.log("scrolling");
+//     // console.log(homeInView)
+//     // console.log(bioInView)
+//     // console.log(workInView)
+//     // console.log(projectInView)
+//     // console.log(learnInView)
+//     // homeInView ? setCurrentSection(currentSection => 1)
+//     //   : bioInView ? setCurrentSection(currentSection => 2)
+//     //   : workInView ? setCurrentSection(currentSection => 3)
+//     //   : projectInView ? setCurrentSection(currentSection => 4)
+//     //   : learnInView ? setCurrentSection(currentSection => 5)
+//     //   : setCurrentSection(currentSection => 6)
+//     // console.log(getSection())
+//     console.log(window.pageYOffset)
+//   }
   
-  window.addEventListener("scroll", handleScroll);
+//   window.addEventListener("scroll", handleScroll);
 
-  return () => window.removeEventListener("scroll", handleScroll);
+//   return () => window.removeEventListener("scroll", handleScroll);
 
-},)  
+// },)  
 
 
 // https://stackoverflow.com/questions/43233115/chrome-content-scripts-arent-working-domcontentloaded-listener-does-not-execut
-
-  useEffect(() => {
-    function handleAssetsLoaded() {
-      console.log("Page is loaded");
-      const sections = document.querySelectorAll("div")[0].children;
-      console.log(sections[0].children[1].className, sections[0].children[1].offsetTop);
-      console.log(sections[0].children[2].className, sections[0].children[2].offsetTop);
-      console.log(sections[0].children[3].className, sections[0].children[3].offsetTop);
-      console.log(sections[0].children[4].className, sections[0].children[4].offsetTop);
-      console.log(sections[0].children[5].className, sections[0].children[5].offsetTop);
-      console.log(sections[0].children[6].className, sections[0].children[6].offsetTop);
-
-    }
-
-    window.addEventListener("load", handleAssetsLoaded);
-
-    return () => window.removeEventListener("load", handleAssetsLoaded);
-  }, []);
 
 
 
@@ -187,35 +169,35 @@ useEffect(() => {
 
       {/*TODO: Now that DOM rendering order is resolved; fix the ref/state parameters based on window.pageYOffset vs. elements OffsetTop */}
 
-      <Navbar getSection={getSection}/>
+      <Navbar/>
 
         <div className="home" 
         // onChange = {() => setCurrentSection(currentSection => 1)}
-        ref={homeRef}
+        // ref={homeRef}
         >
           <HeroSection />
         </div>
         <div className="about" 
         // onChange = {() => setCurrentSection(currentSection => 2)}
-        ref={bioRef}
+        // ref={bioRef}
         >
           <Bio />
         </div>
         <div className="work-experience" 
         // onChange = {() => setCurrentSection(currentSection => 3)}
-        ref={workRef}
+        // ref={workRef}
         >
           <WorkExperience />
         </div>
         <div className="projects" 
         // onChange = {() => setCurrentSection(currentSection => 4)}
-        ref={projectRef}
+        // ref={projectRef}
         >
           <Projects />
         </div>
         <div className="learn-more" 
         // onChange = {() => setCurrentSection(currentSection => 5)}
-        ref={learnRef}
+        // ref={learnRef}
         >
           <LearnMore />
         </div>

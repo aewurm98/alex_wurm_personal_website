@@ -24,7 +24,7 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-// Set website logo
+// Set website logos
 const siteLogo = <i class="fa-solid fa-basketball"></i>;
 const navItemLogo1 = <i class="fa-solid fa-circle-user"></i>;
 const navItemLogo2 = <i class="fa-solid fa-briefcase"></i>;
@@ -38,23 +38,81 @@ const routeWorkExperience = "work-experience";
 const routeProjects = "projects";
 const routeLearnMore = "learn-more"
 
-// Sections
-const bioSection = 2;
-const workSection = 3;
-const projectsSection = 4;
-const learnSection = 5;
-
 //TODO: Investigate porential to increase span size to make clicking easier
-function Navbar({ logo, brand, transparent, light, sticky, relative, center, getSection}) {
-  const [mobileNavbar, setMobileNavbar] = useState(false);
-  const [mobileView, setMobileView] = useState(false);
+function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
+  
+  // Helper Functions
 
-  const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
+  // Function that updates the visibility state of each section by checking against scroll position
+  function checkViews() {
+    (window.scrollY > aboutOffset*0.5) && (window.scrollY <= (aboutOffset+workOffset)/2) ?
+    setAboutInView(true) : setAboutInView(false);
 
-  const closeMobileNavbar = () => setMobileNavbar(false);
+    (window.scrollY > (aboutOffset+workOffset)/2) && (window.scrollY <= (workOffset+projectsOffset)/2) ?
+    setWorkInView(true) : setWorkInView(false);
 
+    (window.scrollY > (workOffset+projectsOffset)/2) && (window.scrollY <= (projectsOffset+learnOffset)/2) ?
+    setProjectsInView(true) : setProjectsInView(false);
+
+    (window.scrollY > (projectsOffset+learnOffset)/2) && (window.scrollY <= footerOffset) ?
+    setLearnInView(true) : setLearnInView(false);
+  }
+
+  // Function that updates the offsets of each section
+  function updateOffsets() {
+    const sections = document.querySelectorAll("div")[0].children;
+    setAboutOffset(sections[0].children[2].offsetTop);
+    setWorkOffset(sections[0].children[3].offsetTop);
+    setProjectsOffset(sections[0].children[4].offsetTop);
+    setLearnOffset(sections[0].children[5].offsetTop);
+    setFooterOffset(sections[0].children[6].offsetTop);
+    // console.log(sections[0].children[1].className, sections[0].children[1].offsetTop);
+    // console.log(sections[0].children[2].className, sections[0].children[2].offsetTop);
+    // console.log(sections[0].children[3].className, sections[0].children[3].offsetTop);
+    // console.log(sections[0].children[4].className, sections[0].children[4].offsetTop);
+    // console.log(sections[0].children[5].className, sections[0].children[5].offsetTop);
+    // console.log(sections[0].children[6].className, sections[0].children[6].offsetTop);
+    // console.log(`About offset is ${aboutOffset}`)
+    // console.log(`Work offset is ${workOffset}`)
+    // console.log(`Project offset is ${projectsOffset}`)
+    // console.log(`Learn offset is ${learnOffset}`)
+    // console.log(`Footer offset is ${footerOffset}`)
+  }
+
+  // Hooks
+
+    // States related to Mobile Navbar view
+    const [mobileNavbar, setMobileNavbar] = useState(false);
+    const [mobileView, setMobileView] = useState(false);
+    const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
+    const closeMobileNavbar = () => setMobileNavbar(false);
+  
+    // States related to section locations
+    const [aboutOffset, setAboutOffset] = useState(0);
+    const [workOffset, setWorkOffset] = useState(0);
+    const [projectsOffset, setProjectsOffset] = useState(0);
+    const [learnOffset, setLearnOffset] = useState(0);
+    const [footerOffset, setFooterOffset] = useState(0);
+  
+    // States related to section visibility
+    const [aboutInView, setAboutInView] = useState(false);
+    const [workInView, setWorkInView] = useState(false);
+    const [projectsInView, setProjectsInView] = useState(false);
+    const [learnInView, setLearnInView] = useState(false);
+
+  // Constants
+
+  // Constants related to local storage TODO: Figure out how to avoid circular logic and fix refresh killing navbar view
+  // const aboutInitial = (JSON.parse(window.localStorage.getItem('About_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('About_Section_Visibility')) : aboutInView;
+  // const workInitial = (JSON.parse(window.localStorage.getItem('Work_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('Work_Section_Visibility')) : workInView;
+  // const projectsInitial = (JSON.parse(window.localStorage.getItem('Projects_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('Projects_Section_Visibility')) : projectsInView;
+  // const learnInitial = (JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')) : learnInView;
+  
+  // More Hooks
+
+  // A Hook that sets the display state for the DefaultNavbarMobile.
   useEffect(() => {
-    // A function that sets the display state for the DefaultNavbarMobile.
+
     function displayMobileNavbar() {
       if (window.innerWidth < breakpoints.values.lg) {
         setMobileView(true);
@@ -78,13 +136,94 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  const [currentSection, setCurrentSection] = useState(1);
-
+  // A Hook that retrieves the visibility of each section from local storage when the page loads
   useEffect(() => {
-    // console.log(getSection())
-    setCurrentSection(getSection())
-    // console.log("Updating Section")
-  }, [getSection])
+    setAboutInView(prev => JSON.parse(window.localStorage.getItem('About_Section_Visibility')));
+    setWorkInView(prev => JSON.parse(window.localStorage.getItem('Work_Section_Visibility')));
+    setProjectsInView(prev => JSON.parse(window.localStorage.getItem('Projects_Section_Visibility')));
+    setLearnInView(prev => JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')));
+  },[])
+
+  // A Hook that stores the visibility of each section in local storage whenever the visibility of a section changes
+  useEffect(() => {
+    window.localStorage.setItem('About_Section_Visibility', JSON.stringify(aboutInView));
+    window.localStorage.setItem('Work_Section_Visibility', JSON.stringify(workInView));
+    window.localStorage.setItem('Projects_Section_Visibility', JSON.stringify(projectsInView));
+    window.localStorage.setItem('Learn_Section_Visibility', JSON.stringify(learnInView));
+    // console.log(window.localStorage);
+  },[aboutInView, workInView, projectsInView, learnInView])
+
+  // A Hook that updates the offsets of each section using the helper function above whenver the window is resized
+  useEffect(() => {
+
+    function handleResize() {
+      console.log("resizing");
+      updateOffsets();
+    }  
+
+    /** 
+      The event listener that's calling the handleResize function when 
+      resizing the window.
+    */
+    window.addEventListener("resize",handleResize);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+
+  })
+
+  // A Hook that updates the offsets of each section when the page loads, to account for different window sizes
+  useEffect(() => {
+    function handleAssetsLoaded() {
+      // console.log("Page is loaded");
+      // console.log(window.sessionStorage);
+      // console.log(window.localStorage);
+      const sections = document.querySelectorAll("div")[0].children;
+      setAboutOffset(sections[0].children[2].offsetTop);
+      setWorkOffset(sections[0].children[3].offsetTop);
+      setProjectsOffset(sections[0].children[4].offsetTop);
+      setLearnOffset(sections[0].children[5].offsetTop);
+      setFooterOffset(sections[0].children[6].offsetTop);
+
+      // FIXME: Figure out how to get views visibility to check and update on pageload
+      // checkViews();
+    }
+
+    /** 
+      The event listener that's calling the handleAssetsLoaded function when 
+      loading the window.
+    */
+    window.addEventListener("load", handleAssetsLoaded);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("load", handleAssetsLoaded);
+  }, []);
+
+  // A Hook that updates the visibility state of each section as the viewer scrolls
+  useEffect(() => {
+
+    function handleScroll() {
+      // console.log("scrolling");
+      // console.log(window.scrollY)
+      console.log(`About in view: ${aboutInView}`);
+      console.log(`Work in view: ${workInView}`);
+      console.log(`Projects in view: ${projectsInView}`);
+      console.log(`Learn in view: ${learnInView}`);
+
+      // Helper function defined above
+      checkViews();
+    }
+
+    /** 
+      The event listener that's calling the handleScroll function when 
+      scrolling.
+    */
+    window.addEventListener("scroll", handleScroll);
+  
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("scroll", handleScroll);
+  
+  },) 
 
   return (
       
@@ -140,6 +279,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                   spy={true}
                   exact={true}
                   offset={0}
+                  onClick={closeMobileNavbar}
                 >
                   {siteLogo}
                 </LinkS>
@@ -157,6 +297,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                     spy={true}
                     exact={true}
                     offset={0}
+                    onClick={closeMobileNavbar}
                   >
                     {brand}
                   </LinkS>
@@ -183,12 +324,16 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                 sx={{ cursor: "pointer", userSelect: "none" }}
               >
                 <MKTypography
+                  // onMouseEnter={setAboutHovered(true)}
+                  // onMouseLeave={setAboutHovered(false)}
+                  // onMouseOver={console.log("about entered")}
                   variant="button"
-                  fontWeight = {(currentSection == 2) ? "bold" : "regular"}
+                  fontWeight = {aboutInView ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == 2) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: aboutInView ? "2px solid #90a4ae" : "2px solid transparent",
+                          "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
                 >
                   <LinkS
                     to={routeAbout}
@@ -203,11 +348,12 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == 3) ? "bold" : "regular"}
+                  fontWeight = {workInView ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == 3) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: workInView ? "2px solid #90a4ae" : "2px solid transparent" ,
+                  "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
                 >
                   <LinkS
                     to={routeWorkExperience}
@@ -222,11 +368,12 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == 4) ? "bold" : "regular"}
+                  fontWeight = { projectsInView ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == 4) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: projectsInView ? "2px solid #90a4ae" : "2px solid transparent" ,
+                  "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
                 >
                   <LinkS
                     to={routeProjects}
@@ -241,11 +388,12 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                 </MKTypography>
                 <MKTypography
                   variant="button"
-                  fontWeight = {(currentSection == 5) ? "bold" : "regular"}
+                  fontWeight = { learnInView ? "bold" : "regular"}
                   color={light ? "white" : "dark"}
                   mx="auto"
                   p={1}
-                  sx = {{ borderBottom: (currentSection == 5) ? "2px solid #90a4ae" : "2px solid transparent" }}
+                  sx = {{ borderBottom: learnInView ? "2px solid #90a4ae" : "2px solid transparent" ,
+                  "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
                 >
                   <LinkS
                     to={routeLearnMore}
@@ -300,6 +448,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                     fontWeight="medium"
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
                   >
                     <LinkS
                       to={routeAbout}
@@ -317,6 +466,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                     fontWeight="medium"
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
                   >
                     <LinkS
                       to={routeWorkExperience}
@@ -334,6 +484,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                     fontWeight="medium"
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
                   >
                     <LinkS
                       to={routeProjects}
@@ -351,6 +502,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                     fontWeight="medium"
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
                   >
                     <LinkS
                       to={routeLearnMore}
@@ -367,9 +519,12 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                 <Stack spacing={2}>
                   <MKTypography
                     variant="button"
-                    fontWeight="medium"
+                    fontWeight = { aboutInView ? "bold" : "regular"}
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
+                    sx = {{ borderLeft: aboutInView ? "2px solid #90a4ae" : "2px solid transparent" ,
+                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
                   >
                     <LinkS
                       to={routeAbout}
@@ -378,15 +533,19 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                       spy={true}
                       exact={true}
                       offset={0}
+                      onClick={() => setMobileNavbar(false)}
                     >
                       About
                     </LinkS>
                   </MKTypography>
                   <MKTypography
                     variant="button"
-                    fontWeight="medium"
+                    fontWeight = { workInView ? "bold" : "regular"}
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
+                    sx = {{ borderLeft: workInView ? "2px solid #90a4ae" : "2px solid transparent" ,
+                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
                   >
                     <LinkS
                       to={routeWorkExperience}
@@ -395,15 +554,20 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                       spy={true}
                       exact={true}
                       offset={0}
+                      onClick={() => setMobileNavbar(false)}
                     >
                       Work Experience
                     </LinkS>
                   </MKTypography>
                   <MKTypography
                     variant="button"
-                    fontWeight="medium"
+                    fontWeight = { projectsInView ? "bold" : "regular"}
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
+                    sx = {{ borderLeft: projectsInView ? "2px solid #90a4ae" : "2px solid transparent" ,
+                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
+
                   >
                     <LinkS
                       to={routeProjects}
@@ -412,15 +576,19 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                       spy={true}
                       exact={true}
                       offset={0}
+                      onClick={() => setMobileNavbar(false)}
                     >
                       Projects
                     </LinkS>
                   </MKTypography>
                   <MKTypography
                     variant="button"
-                    fontWeight="medium"
+                    fontWeight = { learnInView ? "bold" : "regular"}
                     color={light ? "white" : "dark"}
                     my="auto"
+                    p={1}
+                    sx = {{ borderLeft: learnInView ? "2px solid #90a4ae" : "2px solid transparent" ,
+                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
                   >
                     <LinkS
                       to={routeLearnMore}
@@ -429,6 +597,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center, get
                       spy={true}
                       exact={true}
                       offset={0}
+                      onClick={() => setMobileNavbar(false)}
                     >
                       Learn More
                     </LinkS>
@@ -452,7 +621,6 @@ Navbar.defaultProps = {
   sticky: true,
   relative: false,
   center: false,
-  currentSection: "home"
 };
 
 export default Navbar;
