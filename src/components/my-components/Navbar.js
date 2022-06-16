@@ -58,6 +58,12 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
     setLearnInView(true) : setLearnInView(false);
   }
 
+  // Function that updates visibility of sections as the user scrolls to save in local storage for page refresh
+
+  // function storeView() {
+
+  // }
+
   // Function that updates the offsets of each section
   function updateOffsets() {
     const sections = document.querySelectorAll("div")[0].children;
@@ -88,11 +94,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
     const closeMobileNavbar = () => setMobileNavbar(false);
   
     // States related to section locations
-    const [aboutOffset, setAboutOffset] = useState(0);
-    const [workOffset, setWorkOffset] = useState(0);
-    const [projectsOffset, setProjectsOffset] = useState(0);
-    const [learnOffset, setLearnOffset] = useState(0);
-    const [footerOffset, setFooterOffset] = useState(0);
+    const [aboutOffset, setAboutOffset] = useState(765);
+    const [workOffset, setWorkOffset] = useState(1530);
+    const [projectsOffset, setProjectsOffset] = useState(2295);
+    const [learnOffset, setLearnOffset] = useState(3060);
+    const [footerOffset, setFooterOffset] = useState(3825);
   
     // States related to section visibility
     const [aboutInView, setAboutInView] = useState(false);
@@ -109,6 +115,43 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
   // const learnInitial = (JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')) : learnInView;
   
   // More Hooks
+
+  // A Hook that updates the offsets of each section when the page loads, to account for different window sizes
+  useEffect(() => {
+    function handleAssetsLoaded() {
+      // console.log("Page is loaded");
+      // console.log(window.sessionStorage);
+      // console.log(window.localStorage);
+
+      const sections = document.querySelectorAll("div")[0].children;
+      setAboutOffset(sections[0].children[2].offsetTop);
+      setWorkOffset(sections[0].children[3].offsetTop);
+      setProjectsOffset(sections[0].children[4].offsetTop);
+      setLearnOffset(sections[0].children[5].offsetTop);
+      setFooterOffset(sections[0].children[6].offsetTop);
+      console.log(window.localStorage);
+
+      // FIXME: Figure out how to get views visibility to check and update on pageload
+      checkViews();
+    }
+
+    /** 
+      The event listener that's calling the handleAssetsLoaded function when 
+      loading the window.
+    */
+    window.addEventListener("load", handleAssetsLoaded);
+
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("load", handleAssetsLoaded);
+  },);
+
+    // A Hook that retrieves the visibility of each section from local storage when the page loads
+    useEffect(() => {
+      setAboutInView(prev => JSON.parse(window.localStorage.getItem('About_Section_Visibility')));
+      setWorkInView(prev => JSON.parse(window.localStorage.getItem('Work_Section_Visibility')));
+      setProjectsInView(prev => JSON.parse(window.localStorage.getItem('Projects_Section_Visibility')));
+      setLearnInView(prev => JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')));
+    },[])
 
   // A Hook that sets the display state for the DefaultNavbarMobile.
   useEffect(() => {
@@ -136,28 +179,11 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  // A Hook that retrieves the visibility of each section from local storage when the page loads
-  useEffect(() => {
-    setAboutInView(prev => JSON.parse(window.localStorage.getItem('About_Section_Visibility')));
-    setWorkInView(prev => JSON.parse(window.localStorage.getItem('Work_Section_Visibility')));
-    setProjectsInView(prev => JSON.parse(window.localStorage.getItem('Projects_Section_Visibility')));
-    setLearnInView(prev => JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')));
-  },[])
-
-  // A Hook that stores the visibility of each section in local storage whenever the visibility of a section changes
-  useEffect(() => {
-    window.localStorage.setItem('About_Section_Visibility', JSON.stringify(aboutInView));
-    window.localStorage.setItem('Work_Section_Visibility', JSON.stringify(workInView));
-    window.localStorage.setItem('Projects_Section_Visibility', JSON.stringify(projectsInView));
-    window.localStorage.setItem('Learn_Section_Visibility', JSON.stringify(learnInView));
-    // console.log(window.localStorage);
-  },[aboutInView, workInView, projectsInView, learnInView])
-
   // A Hook that updates the offsets of each section using the helper function above whenver the window is resized
   useEffect(() => {
 
     function handleResize() {
-      console.log("resizing");
+      // console.log("resizing");
       updateOffsets();
     }  
 
@@ -171,33 +197,6 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
     return () => window.removeEventListener("resize", handleResize);
 
   })
-
-  // A Hook that updates the offsets of each section when the page loads, to account for different window sizes
-  useEffect(() => {
-    function handleAssetsLoaded() {
-      // console.log("Page is loaded");
-      // console.log(window.sessionStorage);
-      // console.log(window.localStorage);
-      const sections = document.querySelectorAll("div")[0].children;
-      setAboutOffset(sections[0].children[2].offsetTop);
-      setWorkOffset(sections[0].children[3].offsetTop);
-      setProjectsOffset(sections[0].children[4].offsetTop);
-      setLearnOffset(sections[0].children[5].offsetTop);
-      setFooterOffset(sections[0].children[6].offsetTop);
-
-      // FIXME: Figure out how to get views visibility to check and update on pageload
-      checkViews();
-    }
-
-    /** 
-      The event listener that's calling the handleAssetsLoaded function when 
-      loading the window.
-    */
-    window.addEventListener("load", handleAssetsLoaded);
-
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("load", handleAssetsLoaded);
-  }, []);
 
   // A Hook that updates the visibility state of each section as the viewer scrolls
   useEffect(() => {
@@ -224,6 +223,15 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
     return () => window.removeEventListener("scroll", handleScroll);
   
   },) 
+
+    // A Hook that stores the visibility of each section in local storage whenever the visibility of a section changes
+    useEffect(() => {
+      window.localStorage.setItem('About_Section_Visibility', JSON.stringify(aboutInView));
+      window.localStorage.setItem('Work_Section_Visibility', JSON.stringify(workInView));
+      window.localStorage.setItem('Projects_Section_Visibility', JSON.stringify(projectsInView));
+      window.localStorage.setItem('Learn_Section_Visibility', JSON.stringify(learnInView));
+      // console.log(window.localStorage);
+    },[aboutInView, workInView, projectsInView, learnInView])
 
   return (
       
