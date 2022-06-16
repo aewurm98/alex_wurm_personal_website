@@ -531,8 +531,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
                     color={light ? "white" : "dark"}
                     my="auto"
                     p={1}
-                    sx = {{ borderLeft: aboutInView ? "2px solid #90a4ae" : "2px solid transparent" ,
-                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
+                    sx = {{ borderLeft: aboutInView ? "2px solid #90a4ae" : "2px solid transparent"}}
                   >
                     <LinkS
                       to={routeAbout}
@@ -552,8 +551,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
                     color={light ? "white" : "dark"}
                     my="auto"
                     p={1}
-                    sx = {{ borderLeft: workInView ? "2px solid #90a4ae" : "2px solid transparent" ,
-                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
+                    sx = {{ borderLeft: workInView ? "2px solid #90a4ae" : "2px solid transparent"}}
                   >
                     <LinkS
                       to={routeWorkExperience}
@@ -573,8 +571,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
                     color={light ? "white" : "dark"}
                     my="auto"
                     p={1}
-                    sx = {{ borderLeft: projectsInView ? "2px solid #90a4ae" : "2px solid transparent" ,
-                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
+                    sx = {{ borderLeft: projectsInView ? "2px solid #90a4ae" : "2px solid transparent"}}
 
                   >
                     <LinkS
@@ -595,8 +592,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
                     color={light ? "white" : "dark"}
                     my="auto"
                     p={1}
-                    sx = {{ borderLeft: learnInView ? "2px solid #90a4ae" : "2px solid transparent" ,
-                    "&:hover": {fontWeight: "bold", borderBottom: "2px solid #90a4ae"}}}
+                    sx = {{ borderLeft: learnInView ? "2px solid #90a4ae" : "2px solid transparent"}}
                   >
                     <LinkS
                       to={routeLearnMore}

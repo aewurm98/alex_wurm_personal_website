@@ -18,6 +18,8 @@ import mountains3 from "assets/images/my-images/Orange_Mountains.jpg";
 
 function Projects() {
     return <>
+    
+    <BrowserView>
     <MKBox
         minHeight="100vh"
         width="100%"
@@ -30,6 +32,11 @@ function Projects() {
           placeItems: "flex-end start",
         }}
       ></MKBox>
+      </BrowserView>
+
+      <MobileView>
+        
+      </MobileView>
     </>;
   }
   

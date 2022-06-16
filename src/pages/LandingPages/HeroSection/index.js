@@ -17,8 +17,7 @@ import MKButton from "components/MKButton";
 import alex from "assets/images/my-images/Alex_Nature_Zoom.png";
 import bgi from "assets/images/my-images/Abstract_Lines.jpg";
 
-// TODO: Go back into Default Navbar and figure out how to add back functionality to collapse entire navbar after making a selection or clicking out
-// Home page. It works when I click the 'X' icon, so look through code to find and replicate that behavior.
+//TODO: Go back into each section and flex minheight with screensize so socials show immediately on mobile
 function HeroSection() {
   return (
     <>

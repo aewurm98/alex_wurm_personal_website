@@ -17,20 +17,41 @@ import MKButton from "components/MKButton";
 import mountains4 from "assets/images/my-images/Turquoise_Mountains.jpg";
 
 function LearnMore() {
-    return <>
-    <MKBox
-        minHeight="100vh"
-        width="100%"
-        sx={{
-          backgroundImage: `url(${mountains4})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          flexDirection: "row-reverse",
-          placeItems: "flex-end start",
-        }}
-      ></MKBox>
-    </>;
-  }
-  
-  export default LearnMore;
+  return (
+    <>
+      <BrowserView>
+        <MKBox
+          minHeight="100vh"
+          width="100%"
+          position="relative"
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            placeItems: "center end",
+            p: 3,
+          }}
+        >
+          <MKBox
+            position="absolute"
+            minHeight="100vh"
+            width="100%"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            sx={{
+              backgroundImage: `url(${mountains4})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: 0.75,
+            }}
+          ></MKBox>
+        </MKBox>
+      </BrowserView>
+
+      <MobileView></MobileView>
+    </>
+  );
+}
+
+export default LearnMore;
