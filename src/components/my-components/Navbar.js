@@ -186,7 +186,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
       setFooterOffset(sections[0].children[6].offsetTop);
 
       // FIXME: Figure out how to get views visibility to check and update on pageload
-      // checkViews();
+      checkViews();
     }
 
     /** 
