@@ -14,9 +14,13 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
+// My Components
+import ButtonMailTo from "components/my-components/ButtonMailTo";
+
 // Images
 import mountains1 from "assets/images/my-images/Blue_Mountains.jpg";
 
+//TODO: Update BrowserView to be responsive to size changes
 function Bio() {
   return (
     <>
@@ -140,6 +144,9 @@ function Bio() {
               >
                 You can reach me at <u>aewurm98@gmail.com</u> for the most
                 updated version of my full resume.
+
+              <ButtonMailTo label="aewurm98@gmail.com" mailto="mailto:aewurm98@gmail.com" />
+
               </MKTypography>
             </MKBox>
           </MKBox>
