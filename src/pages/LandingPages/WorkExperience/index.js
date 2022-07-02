@@ -56,6 +56,7 @@ function WorkExperience() {
               opacity: 0.75,
             }}
           ></MKBox>
+          {/* TODO: Make responsive to screen resizing to text doesn't get cut off */}
           <MKBox
             position="relative"
             width="100%"
@@ -65,7 +66,7 @@ function WorkExperience() {
             borderRadius="xl"
             bgColor="white"
             shadow="xl"
-            overflow="auto"
+            overflow="visible"
             p={3}
             sx={{
               borderLeft: "2px solid #ffffff",
@@ -78,13 +79,47 @@ function WorkExperience() {
           >
             <MKBox
               flex={1}
+              display="flex"
+              flexDirection="column"
+              position="relative"
+              overflow="visible"
               sx={{
                 fontSize: "md",
               }}
             >
+              <MKBox
+                width="80%"
+                height="10%"
+                display="flex"
+                flexDirection="row"
+                flex={1}
+                borderRadius="xl"
+                bgColor="dark"
+                alignItems="center"
+                justifyContent="center"
+                shadow="xl"
+                overflow="auto"
+                p={3}
+                sx={{
+                  position: "absolute",
+                  top: "-20%",
+                  left: "0%",
+                  borderLeft: "2px solid dark",
+                  borderRight: "2px solid dark",
+                  borderTop: "2px solid dark",
+                  borderBottom: "2px solid dark",
+                  mx: 2,
+                  my: 1,
+                }}
+              >
+                <MKTypography color="white" fontWeight="bold">
+                  Current
+                </MKTypography>
+              </MKBox>
               <Link
-                href = "https://www.voyagesms.com/"
-                target = "_blank"
+                href="https://www.voyagesms.com/"
+                target="_blank"
+                flex={5}
                 sx={{ cursor: "pointer", userSelect: "none" }}
               >
                 <img
@@ -100,7 +135,7 @@ function WorkExperience() {
             </MKBox>
             <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
               <MKTypography flex={1} fontWeight="bold">
-                Positions
+                Technical Product Manager & GTM Strategy Lead
               </MKTypography>
               <MKTypography
                 flex={2}
@@ -115,6 +150,7 @@ function WorkExperience() {
               </MKTypography>
             </MKBox>
           </MKBox>
+          {/* TODO: Make responsive to screen resizing to text doesn't get cut off */}
           <MKBox
             position="relative"
             width="100%"
@@ -124,7 +160,7 @@ function WorkExperience() {
             borderRadius="xl"
             bgColor="white"
             shadow="xl"
-            overflow="auto"
+            overflow="visible"
             p={3}
             sx={{
               borderLeft: "2px solid #ffffff",
@@ -137,13 +173,47 @@ function WorkExperience() {
           >
             <MKBox
               flex={1}
+              display="flex"
+              flexDirection="column"
+              position="relative"
+              overflow="visible"
               sx={{
                 fontSize: "md",
               }}
             >
+              <MKBox
+                width="80%"
+                height="10%"
+                display="flex"
+                flexDirection="row"
+                flex={1}
+                borderRadius="xl"
+                bgColor="dark"
+                alignItems="center"
+                justifyContent="center"
+                shadow="xl"
+                overflow="auto"
+                p={3}
+                sx={{
+                  position: "absolute",
+                  top: "-20%",
+                  left: "0%",
+                  borderLeft: "2px solid dark",
+                  borderRight: "2px solid dark",
+                  borderTop: "2px solid dark",
+                  borderBottom: "2px solid dark",
+                  mx: 2,
+                  my: 1,
+                }}
+              >
+                <MKTypography color="white" fontWeight="bold">
+                  2020 - 2022
+                </MKTypography>
+              </MKBox>
               <Link
                 href="https://www.bain.com/"
-                target = "_blank"
+                target="_blank"
+                flex={5}
                 sx={{ cursor: "pointer", userSelect: "none" }}
               >
                 <img
@@ -159,7 +229,7 @@ function WorkExperience() {
             </MKBox>
             <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
               <MKTypography flex={1} fontWeight="bold">
-                Positions
+                Associate Consultant | Senior Associate Consultant
               </MKTypography>
               <MKTypography
                 flex={2}
@@ -174,6 +244,7 @@ function WorkExperience() {
               </MKTypography>
             </MKBox>
           </MKBox>
+          {/* TODO: Figure out how to make all cards same layout despite different image sizes */}
           <MKBox
             position="relative"
             width="100%"
@@ -181,18 +252,20 @@ function WorkExperience() {
             flex={1}
             flexDirection="row"
             justifyContent="space-between"
+            overflow="visible"
             mx={2}
             my={1}
           >
             <MKBox
               position="relative"
+              width="100%"
               display="flex"
               flex={1}
               flexDirection="column"
               borderRadius="xl"
               bgColor="white"
               shadow="xl"
-              overflow="auto"
+              overflow="visible"
               p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
@@ -201,43 +274,206 @@ function WorkExperience() {
                 borderBottom: "2px solid #ffffff",
                 mr: 1,
               }}
-            ></MKBox>
+            >
+              <MKBox
+                position="relative"
+                height="100%"
+                width="100%"
+                display="flex"
+                flexDirection="column"
+                overflow="visible"
+              >
+                <Link
+                  href="https://www.kindevadd.com/"
+                  target="_blank"
+                  flex={3}
+                  sx={{ cursor: "pointer", userSelect: "none" }}
+                >
+                  <img
+                    src={kindeva}
+                    alt="kindeva"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Link>
+                <MKBox
+                  width="80%"
+                  height="10%"
+                  display="flex"
+                  flexDirection="row"
+                  flex={1}
+                  borderRadius="xl"
+                  bgColor="dark"
+                  alignItems="center"
+                  justifyContent="center"
+                  shadow="xl"
+                  overflow="auto"
+                  p={3}
+                  sx={{
+                    position: "absolute",
+                    bottom: "-50%",
+                    left: "0%",
+                    borderLeft: "2px solid dark",
+                    borderRight: "2px solid dark",
+                    borderTop: "2px solid dark",
+                    borderBottom: "2px solid dark",
+                    mx: 2,
+                    my: 1,
+                  }}
+                >
+                  <MKTypography color="white" fontWeight="bold">
+                    2020
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </MKBox>
             <MKBox
               position="relative"
+              width="100%"
               display="flex"
               flex={1}
               flexDirection="column"
               borderRadius="xl"
               bgColor="white"
               shadow="xl"
-              overflow="auto"
+              overflow="visible"
               p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
                 borderTop: "2px solid #ffffff",
                 borderBottom: "2px solid #ffffff",
-                mx: 1,
+                mr: 1,
               }}
-            ></MKBox>
+            >
+              <MKBox
+                position="relative"
+                display="flex"
+                flexDirection="column"
+                overflow="visible"
+              >
+                <Link
+                  href="https://www.kindevadd.com/"
+                  target="_blank"
+                  flex={3}
+                  sx={{ cursor: "pointer", userSelect: "none" }}
+                >
+                  <img
+                    src={kindeva}
+                    alt="kindeva"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Link>
+                <MKBox
+                  width="80%"
+                  height="10%"
+                  display="flex"
+                  flexDirection="row"
+                  flex={1}
+                  borderRadius="xl"
+                  bgColor="dark"
+                  alignItems="center"
+                  justifyContent="center"
+                  shadow="xl"
+                  overflow="auto"
+                  p={3}
+                  sx={{
+                    position: "absolute",
+                    bottom: "-80%",
+                    left: "0%",
+                    borderLeft: "2px solid dark",
+                    borderRight: "2px solid dark",
+                    borderTop: "2px solid dark",
+                    borderBottom: "2px solid dark",
+                    mx: 2,
+                    my: 1,
+                  }}
+                >
+                  <MKTypography color="white" fontWeight="bold">
+                    2020
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </MKBox>
             <MKBox
               position="relative"
+              width="100%"
               display="flex"
               flex={1}
               flexDirection="column"
               borderRadius="xl"
               bgColor="white"
               shadow="xl"
-              overflow="auto"
+              overflow="visible"
               p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
                 borderTop: "2px solid #ffffff",
                 borderBottom: "2px solid #ffffff",
-                mx: 1,
+                mr: 1,
               }}
-            ></MKBox>
+            >
+              <MKBox
+                position="relative"
+                display="flex"
+                flexDirection="column"
+                overflow="visible"
+              >
+                <Link
+                  href="https://www.kindevadd.com/"
+                  target="_blank"
+                  flex={3}
+                  sx={{ cursor: "pointer", userSelect: "none" }}
+                >
+                  <img
+                    src={kindeva}
+                    alt="kindeva"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Link>
+                <MKBox
+                  width="80%"
+                  height="10%"
+                  display="flex"
+                  flexDirection="row"
+                  flex={1}
+                  borderRadius="xl"
+                  bgColor="dark"
+                  alignItems="center"
+                  justifyContent="center"
+                  shadow="xl"
+                  overflow="auto"
+                  p={3}
+                  sx={{
+                    position: "absolute",
+                    bottom: "-80%",
+                    left: "0%",
+                    borderLeft: "2px solid dark",
+                    borderRight: "2px solid dark",
+                    borderTop: "2px solid dark",
+                    borderBottom: "2px solid dark",
+                    mx: 2,
+                    my: 1,
+                  }}
+                >
+                  <MKTypography color="white" fontWeight="bold">
+                    2020
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </MKBox>
             <MKBox
               position="relative"
               display="flex"
