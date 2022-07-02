@@ -1,18 +1,9 @@
 // React components
 import { BrowserView, MobileView } from "react-device-detect";
 
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import Stack from "@mui/material/Stack";
-import Divider from "@mui/material/Divider";
-import { spacing } from "@mui/system";
-
 // MUIKit2 Components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 
 // My Components
 import ButtonMailTo from "components/my-components/ButtonMailTo";
@@ -142,11 +133,9 @@ function Bio() {
                 fontWeight="regular"
                 my={3}
               >
-                You can reach me at <u>aewurm98@gmail.com</u> for the most
-                updated version of my full resume.
-
-              <ButtonMailTo label="aewurm98@gmail.com" mailto="mailto:aewurm98@gmail.com" />
-
+                You can reach me at&nbsp;
+                <ButtonMailTo label="aewurm98@gmail.com" mailto="mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website" />&nbsp;
+                for the most updated version of my full resume.
               </MKTypography>
             </MKBox>
           </MKBox>
@@ -269,8 +258,9 @@ function Bio() {
                 fontWeight="regular"
                 my={3}
               >
-                You can reach me at <u>aewurm98@gmail.com</u> for the most
-                updated version of my full resume.
+                You can reach me at&nbsp;
+                <ButtonMailTo label="aewurm98@gmail.com" mailto="mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website" />&nbsp;
+                for the most updated version of my full resume.
               </MKTypography>
             </MKBox>
           </MKBox>

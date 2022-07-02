@@ -1,5 +1,6 @@
 // React components
 import { BrowserView, MobileView } from "react-device-detect";
+// import { Link } from "react-router-dom";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -7,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
 import { spacing } from "@mui/system";
+import Link from "@mui/material/Link";
 
 // MUIKit2 Components
 import MKBox from "components/MKBox";
@@ -28,14 +30,14 @@ function WorkExperience() {
   return (
     <>
       <BrowserView>
-      <MKBox
+        <MKBox
           minHeight="100vh"
           width="100%"
           position="relative"
           sx={{
             display: "flex",
-            flexDirection: "row",
-            placeItems: "center end",
+            flexDirection: "column",
+            placeItems: "center",
             p: 3,
           }}
         >
@@ -54,6 +56,207 @@ function WorkExperience() {
               opacity: 0.75,
             }}
           ></MKBox>
+          <MKBox
+            position="relative"
+            width="100%"
+            display="flex"
+            flex={1}
+            flexDirection="row"
+            borderRadius="xl"
+            bgColor="white"
+            shadow="xl"
+            overflow="auto"
+            p={3}
+            sx={{
+              borderLeft: "2px solid #ffffff",
+              borderRight: "2px solid #ffffff",
+              borderTop: "2px solid #ffffff",
+              borderBottom: "2px solid #ffffff",
+              mx: 2,
+              my: 1,
+            }}
+          >
+            <MKBox
+              flex={1}
+              sx={{
+                fontSize: "md",
+              }}
+            >
+              <Link
+                href = "https://www.voyagesms.com/"
+                target = "_blank"
+                sx={{ cursor: "pointer", userSelect: "none" }}
+              >
+                <img
+                  src={voyage}
+                  alt="voyage"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              </Link>
+            </MKBox>
+            <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
+              <MKTypography flex={1} fontWeight="bold">
+                Positions
+              </MKTypography>
+              <MKTypography
+                flex={2}
+                display="flex"
+                flexDirection="column"
+                alignItems="start"
+                justifyContent="space-between"
+              >
+                <li>Voyage 1</li>
+                <li>Voyage 2</li>
+                <li>Voyage 3</li>
+              </MKTypography>
+            </MKBox>
+          </MKBox>
+          <MKBox
+            position="relative"
+            width="100%"
+            display="flex"
+            flex={1}
+            flexDirection="row"
+            borderRadius="xl"
+            bgColor="white"
+            shadow="xl"
+            overflow="auto"
+            p={3}
+            sx={{
+              borderLeft: "2px solid #ffffff",
+              borderRight: "2px solid #ffffff",
+              borderTop: "2px solid #ffffff",
+              borderBottom: "2px solid #ffffff",
+              mx: 2,
+              my: 1,
+            }}
+          >
+            <MKBox
+              flex={1}
+              sx={{
+                fontSize: "md",
+              }}
+            >
+              <Link
+                href="https://www.bain.com/"
+                target = "_blank"
+                sx={{ cursor: "pointer", userSelect: "none" }}
+              >
+                <img
+                  src={bain}
+                  alt="bain"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              </Link>
+            </MKBox>
+            <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
+              <MKTypography flex={1} fontWeight="bold">
+                Positions
+              </MKTypography>
+              <MKTypography
+                flex={2}
+                display="flex"
+                flexDirection="column"
+                alignItems="start"
+                justifyContent="space-between"
+              >
+                <li>Bain 1</li>
+                <li>Bain 2</li>
+                <li>Bain 3</li>
+              </MKTypography>
+            </MKBox>
+          </MKBox>
+          <MKBox
+            position="relative"
+            width="100%"
+            display="flex"
+            flex={1}
+            flexDirection="row"
+            justifyContent="space-between"
+            mx={2}
+            my={1}
+          >
+            <MKBox
+              position="relative"
+              display="flex"
+              flex={1}
+              flexDirection="column"
+              borderRadius="xl"
+              bgColor="white"
+              shadow="xl"
+              overflow="auto"
+              p={3}
+              sx={{
+                borderLeft: "2px solid #ffffff",
+                borderRight: "2px solid #ffffff",
+                borderTop: "2px solid #ffffff",
+                borderBottom: "2px solid #ffffff",
+                mr: 1,
+              }}
+            ></MKBox>
+            <MKBox
+              position="relative"
+              display="flex"
+              flex={1}
+              flexDirection="column"
+              borderRadius="xl"
+              bgColor="white"
+              shadow="xl"
+              overflow="auto"
+              p={3}
+              sx={{
+                borderLeft: "2px solid #ffffff",
+                borderRight: "2px solid #ffffff",
+                borderTop: "2px solid #ffffff",
+                borderBottom: "2px solid #ffffff",
+                mx: 1,
+              }}
+            ></MKBox>
+            <MKBox
+              position="relative"
+              display="flex"
+              flex={1}
+              flexDirection="column"
+              borderRadius="xl"
+              bgColor="white"
+              shadow="xl"
+              overflow="auto"
+              p={3}
+              sx={{
+                borderLeft: "2px solid #ffffff",
+                borderRight: "2px solid #ffffff",
+                borderTop: "2px solid #ffffff",
+                borderBottom: "2px solid #ffffff",
+                mx: 1,
+              }}
+            ></MKBox>
+            <MKBox
+              position="relative"
+              display="flex"
+              flex={1}
+              flexDirection="column"
+              borderRadius="xl"
+              bgColor="white"
+              shadow="xl"
+              overflow="auto"
+              p={3}
+              sx={{
+                borderLeft: "2px solid #ffffff",
+                borderRight: "2px solid #ffffff",
+                borderTop: "2px solid #ffffff",
+                borderBottom: "2px solid #ffffff",
+                ml: 1,
+              }}
+            ></MKBox>
+          </MKBox>
         </MKBox>
       </BrowserView>
 

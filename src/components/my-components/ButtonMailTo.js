@@ -8,11 +8,11 @@ const ButtonMailto = ({ mailto, label }) => {
         <Link
             to='#'
             onClick={(e) => {
-                window.location = mailto;
+                window.open(mailto);
                 e.preventDefault();
             }}
         >
-            {label}
+            <u>{label}</u>
         </Link>
     );
 };
