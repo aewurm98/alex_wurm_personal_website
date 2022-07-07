@@ -56,7 +56,7 @@ function WorkExperience() {
               opacity: 0.75,
             }}
           ></MKBox>
-          {/* TODO: Make responsive to screen resizing to text doesn't get cut off */}
+          {/* TODO: Make responsive to screen resizing so text doesn't get cut off */}
           <MKBox
             position="relative"
             width="100%"
@@ -266,7 +266,6 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
-              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -282,6 +281,9 @@ function WorkExperience() {
                 display="flex"
                 flexDirection="column"
                 overflow="visible"
+                sx={{
+                  fontSize: "md",
+                }}
               >
                 <Link
                   href="https://www.kindevadd.com/"
@@ -314,14 +316,12 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-50%",
-                    left: "0%",
+                    bottom: "-15%",
+                    left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
                     borderTop: "2px solid dark",
                     borderBottom: "2px solid dark",
-                    mx: 2,
-                    my: 1,
                   }}
                 >
                   <MKTypography color="white" fontWeight="bold">
@@ -340,7 +340,6 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
-              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -351,19 +350,24 @@ function WorkExperience() {
             >
               <MKBox
                 position="relative"
+                height="100%"
+                width="100%"
                 display="flex"
                 flexDirection="column"
                 overflow="visible"
+                sx={{
+                  fontSize: "md",
+                }}
               >
                 <Link
-                  href="https://www.kindevadd.com/"
+                  href="https://www.cornell.edu/"
                   target="_blank"
                   flex={3}
                   sx={{ cursor: "pointer", userSelect: "none" }}
                 >
                   <img
-                    src={kindeva}
-                    alt="kindeva"
+                    src={cornell}
+                    alt="cornell"
                     style={{
                       width: "100%",
                       height: "100%",
@@ -386,14 +390,12 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-80%",
-                    left: "0%",
+                    bottom: "-15%",
+                    left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
                     borderTop: "2px solid dark",
                     borderBottom: "2px solid dark",
-                    mx: 2,
-                    my: 1,
                   }}
                 >
                   <MKTypography color="white" fontWeight="bold">
@@ -412,7 +414,6 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
-              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -423,19 +424,24 @@ function WorkExperience() {
             >
               <MKBox
                 position="relative"
+                height="100%"
+                width="100%"
                 display="flex"
                 flexDirection="column"
                 overflow="visible"
+                sx={{
+                  fontSize: "md",
+                }}
               >
                 <Link
-                  href="https://www.kindevadd.com/"
+                  href="https://www.pepsico.com/"
                   target="_blank"
                   flex={3}
                   sx={{ cursor: "pointer", userSelect: "none" }}
                 >
                   <img
-                    src={kindeva}
-                    alt="kindeva"
+                    src={pepsico}
+                    alt="pepsico"
                     style={{
                       width: "100%",
                       height: "100%",
@@ -458,14 +464,12 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-80%",
-                    left: "0%",
+                    bottom: "-15%",
+                    left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
                     borderTop: "2px solid dark",
                     borderBottom: "2px solid dark",
-                    mx: 2,
-                    my: 1,
                   }}
                 >
                   <MKTypography color="white" fontWeight="bold">
@@ -476,22 +480,152 @@ function WorkExperience() {
             </MKBox>
             <MKBox
               position="relative"
+              width="100%"
               display="flex"
               flex={1}
               flexDirection="column"
               borderRadius="xl"
               bgColor="white"
               shadow="xl"
-              overflow="auto"
-              p={3}
+              overflow="visible"
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
                 borderTop: "2px solid #ffffff",
                 borderBottom: "2px solid #ffffff",
-                ml: 1,
+                mr: 1,
               }}
-            ></MKBox>
+            >
+              <MKBox
+                position="relative"
+                height="100%"
+                width="100%"
+                display="flex"
+                flexDirection="column"
+                overflow="visible"
+                sx={{
+                  fontSize: "md",
+                }}
+              >
+                <Link
+                  href="https://us.pg.com/"
+                  target="_blank"
+                  flex={3}
+                  sx={{ cursor: "pointer", userSelect: "none" }}
+                >
+                  <img
+                    src={pg}
+                    alt="p&g"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Link>
+                <MKBox
+                  width="80%"
+                  height="10%"
+                  display="flex"
+                  flexDirection="row"
+                  flex={1}
+                  borderRadius="xl"
+                  bgColor="dark"
+                  alignItems="center"
+                  justifyContent="center"
+                  shadow="xl"
+                  overflow="auto"
+                  p={3}
+                  sx={{
+                    position: "absolute",
+                    bottom: "-15%",
+                    left: "10%",
+                    borderLeft: "2px solid dark",
+                    borderRight: "2px solid dark",
+                    borderTop: "2px solid dark",
+                    borderBottom: "2px solid dark",
+                  }}
+                >
+                  <MKTypography color="white" fontWeight="bold">
+                    2020
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </MKBox>
+            <MKBox
+              position="relative"
+              width="100%"
+              display="flex"
+              flex={1}
+              flexDirection="column"
+              borderRadius="xl"
+              bgColor="white"
+              shadow="xl"
+              overflow="visible"
+              sx={{
+                borderLeft: "2px solid #ffffff",
+                borderRight: "2px solid #ffffff",
+                borderTop: "2px solid #ffffff",
+                borderBottom: "2px solid #ffffff",
+                mr: 1,
+              }}
+            >
+              <MKBox
+                position="relative"
+                height="100%"
+                width="100%"
+                display="flex"
+                flexDirection="column"
+                overflow="visible"
+                sx={{
+                  fontSize: "md",
+                }}
+              >
+                <Link
+                  href="https://www.logicprep.com/"
+                  target="_blank"
+                  flex={3}
+                  sx={{ cursor: "pointer", userSelect: "none" }}
+                >
+                  <img
+                    src={lp}
+                    alt="logicprep"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Link>
+                <MKBox
+                  width="80%"
+                  height="10%"
+                  display="flex"
+                  flexDirection="row"
+                  flex={1}
+                  borderRadius="xl"
+                  bgColor="dark"
+                  alignItems="center"
+                  justifyContent="center"
+                  shadow="xl"
+                  overflow="auto"
+                  p={3}
+                  sx={{
+                    position: "absolute",
+                    bottom: "-15%",
+                    left: "10%",
+                    borderLeft: "2px solid dark",
+                    borderRight: "2px solid dark",
+                    borderTop: "2px solid dark",
+                    borderBottom: "2px solid dark",
+                  }}
+                >
+                  <MKTypography color="white" fontWeight="bold">
+                    2020
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </MKBox>
           </MKBox>
         </MKBox>
       </BrowserView>
