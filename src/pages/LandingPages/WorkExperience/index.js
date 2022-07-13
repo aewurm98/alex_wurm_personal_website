@@ -102,7 +102,7 @@ function WorkExperience() {
                 p={3}
                 sx={{
                   position: "absolute",
-                  top: "-20%",
+                  top: "-25%",
                   left: "0%",
                   borderLeft: "2px solid dark",
                   borderRight: "2px solid dark",
@@ -112,7 +112,10 @@ function WorkExperience() {
                   my: 1,
                 }}
               >
-                <MKTypography color="white" fontWeight="bold">
+                <MKTypography color="white" fontWeight="bold"
+                  sx = {{
+                    fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                  }}>
                   Current
                 </MKTypography>
               </MKBox>
@@ -134,7 +137,10 @@ function WorkExperience() {
               </Link>
             </MKBox>
             <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
-              <MKTypography flex={1} fontWeight="bold">
+              <MKTypography flex={1} fontWeight="bold"
+                sx = {{
+                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                }}>
                 Technical Product Manager & GTM Strategy Lead
               </MKTypography>
               <MKTypography
@@ -143,6 +149,9 @@ function WorkExperience() {
                 flexDirection="column"
                 alignItems="start"
                 justifyContent="space-between"
+                sx = {{
+                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                }}
               >
                 <li>Voyage 1</li>
                 <li>Voyage 2</li>
@@ -196,7 +205,7 @@ function WorkExperience() {
                 p={3}
                 sx={{
                   position: "absolute",
-                  top: "-20%",
+                  top: "-25%",
                   left: "0%",
                   borderLeft: "2px solid dark",
                   borderRight: "2px solid dark",
@@ -206,7 +215,10 @@ function WorkExperience() {
                   my: 1,
                 }}
               >
-                <MKTypography color="white" fontWeight="bold">
+                <MKTypography color="white" fontWeight="bold"
+                  sx = {{
+                    fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                  }}>
                   2020 - 2022
                 </MKTypography>
               </MKBox>
@@ -228,7 +240,10 @@ function WorkExperience() {
               </Link>
             </MKBox>
             <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
-              <MKTypography flex={1} fontWeight="bold">
+              <MKTypography flex={1} fontWeight="bold"
+                sx = {{
+                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                }}>
                 Associate Consultant | Senior Associate Consultant
               </MKTypography>
               <MKTypography
@@ -237,6 +252,9 @@ function WorkExperience() {
                 flexDirection="column"
                 alignItems="start"
                 justifyContent="space-between"
+                sx = {{
+                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                }}
               >
                 <li>Bain 1</li>
                 <li>Bain 2</li>
@@ -266,6 +284,7 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
+              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -316,7 +335,7 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-15%",
+                    bottom: "-25%",
                     left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
@@ -324,7 +343,10 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold">
+                  <MKTypography color="white" fontWeight="bold"
+                    sx = {{
+                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                    }}>
                     2020
                   </MKTypography>
                 </MKBox>
@@ -340,6 +362,7 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
+              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -390,7 +413,7 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-15%",
+                    bottom: "-25%",
                     left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
@@ -398,7 +421,10 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold">
+                  <MKTypography color="white" fontWeight="bold"
+                    sx = {{
+                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                    }}>
                     2020
                   </MKTypography>
                 </MKBox>
@@ -414,6 +440,7 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
+              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -464,7 +491,7 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-15%",
+                    bottom: "-25%",
                     left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
@@ -472,7 +499,10 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold">
+                  <MKTypography color="white" fontWeight="bold"
+                  sx = {{
+                    fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                  }}>
                     2020
                   </MKTypography>
                 </MKBox>
@@ -488,6 +518,7 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
+              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -538,7 +569,7 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-15%",
+                    bottom: "-25%",
                     left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
@@ -546,7 +577,10 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold">
+                  <MKTypography color="white" fontWeight="bold"
+                    sx = {{
+                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                    }}>
                     2020
                   </MKTypography>
                 </MKBox>
@@ -562,6 +596,7 @@ function WorkExperience() {
               bgColor="white"
               shadow="xl"
               overflow="visible"
+              p={3}
               sx={{
                 borderLeft: "2px solid #ffffff",
                 borderRight: "2px solid #ffffff",
@@ -612,7 +647,7 @@ function WorkExperience() {
                   p={3}
                   sx={{
                     position: "absolute",
-                    bottom: "-15%",
+                    bottom: "-25%",
                     left: "10%",
                     borderLeft: "2px solid dark",
                     borderRight: "2px solid dark",
@@ -620,7 +655,10 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold">
+                  <MKTypography color="white" fontWeight="bold"
+                    sx = {{
+                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                    }}>
                     2020
                   </MKTypography>
                 </MKBox>
