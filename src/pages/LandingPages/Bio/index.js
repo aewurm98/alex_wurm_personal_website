@@ -97,6 +97,7 @@ function Bio() {
               alginItems="start"
               justifyContent="space-between"
               flex={1}
+              overflow="auto"
             >
               <MKTypography variant="h4">👋 Hey there</MKTypography>
             </MKBox>
@@ -106,6 +107,7 @@ function Bio() {
               alignItems="flex-start"
               justifyContent="start"
               flex={12}
+              overflow="auto"
             >
               <MKTypography
                 variant="body1"
@@ -126,7 +128,6 @@ function Bio() {
                 insights, product design, and go-to-market strategy from concept
                 through scale.
               </MKTypography>
-              {/* TODO: Implement mailto: hyperlink here */}
               <MKTypography
                 variant="body1"
                 color="secondary"
@@ -134,8 +135,11 @@ function Bio() {
                 my={3}
               >
                 You can reach me at&nbsp;
-                <ButtonMailTo label="aewurm98@gmail.com" mailto="mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website" />&nbsp;
-                for the most updated version of my full resume.
+                <ButtonMailTo
+                  label="aewurm98@gmail.com"
+                  mailto="mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website"
+                />
+                &nbsp; for the most updated version of my full resume.
               </MKTypography>
             </MKBox>
           </MKBox>
@@ -259,8 +263,11 @@ function Bio() {
                 my={3}
               >
                 You can reach me at&nbsp;
-                <ButtonMailTo label="aewurm98@gmail.com" mailto="mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website" />&nbsp;
-                for the most updated version of my full resume.
+                <ButtonMailTo
+                  label="aewurm98@gmail.com"
+                  mailto="mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website"
+                />
+                &nbsp; for the most updated version of my full resume.
               </MKTypography>
             </MKBox>
           </MKBox>

@@ -60,271 +60,41 @@ function WorkExperience() {
               opacity: 0.75,
             }}
           ></MKBox>
-          {/* TODO: Make responsive to screen resizing so text doesn't get cut off */}
+
+          {/* Big Cards Section */}
+          <BigCard
+            company="voyage"
+            logo={voyage}
+            url="https://www.voyagesms.com/"
+            time="Current"
+            titles="Technical Product Manager & GTM Strategy Lead"
+            bullet1="Voyage 1"
+            bullet2="Voyage 2"
+            bullet3="Voyage 3"
+          ></BigCard>
+          <BigCard
+            company="bain"
+            logo={bain}
+            url="https://www.bain.com/"
+            time="2020 - 2022"
+            titles="Associate Consultant | Senior Associate Consultant"
+            bullet1="Bain 1"
+            bullet2="Bain 2"
+            bullet3="Bain 3"
+          ></BigCard>
+
+          {/* Small Cards Section */}
           <MKBox
             position="relative"
             width="100%"
-            display="flex"
+            display="grid"
+            gridAutoFlow="column"
             flex={1}
-            flexDirection="row"
-            borderRadius="xl"
-            bgColor="white"
-            shadow="xl"
+            justifyContent="start"
             overflow="visible"
-            p={3}
-            sx={{
-              borderLeft: "2px solid #ffffff",
-              borderRight: "2px solid #ffffff",
-              borderTop: "2px solid #ffffff",
-              borderBottom: "2px solid #ffffff",
-              mx: 2,
-              my: 1,
-            }}
-          >
-            <MKBox
-              flex={1}
-              display="flex"
-              flexDirection="column"
-              position="relative"
-              overflow="visible"
-              sx={{
-                fontSize: "md",
-              }}
-            >
-              <MKBox
-                width="80%"
-                height="10%"
-                display="flex"
-                flexDirection="row"
-                flex={1}
-                borderRadius="xl"
-                bgColor="dark"
-                alignItems="center"
-                justifyContent="center"
-                shadow="xl"
-                overflow="auto"
-                p={3}
-                sx={{
-                  position: "absolute",
-                  top: "-25%",
-                  left: "0%",
-                  borderLeft: "2px solid dark",
-                  borderRight: "2px solid dark",
-                  borderTop: "2px solid dark",
-                  borderBottom: "2px solid dark",
-                  mx: 2,
-                  my: 1,
-                }}
-              >
-                <MKTypography
-                  color="white"
-                  fontWeight="bold"
-                  sx={{
-                    fontSize: {
-                      xs: "12px",
-                      sm: "14px",
-                      md: "16px",
-                      lg: "18px",
-                      xl: "20px",
-                    },
-                  }}
-                >
-                  Current
-                </MKTypography>
-              </MKBox>
-              <Link
-                href="https://www.voyagesms.com/"
-                target="_blank"
-                flex={5}
-                sx={{ cursor: "pointer", userSelect: "none" }}
-              >
-                <img
-                  src={voyage}
-                  alt="voyage"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
-                />
-              </Link>
-            </MKBox>
-            <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
-              <MKTypography
-                flex={1}
-                fontWeight="bold"
-                sx={{
-                  fontSize: {
-                    xs: "12px",
-                    sm: "14px",
-                    md: "16px",
-                    lg: "18px",
-                    xl: "20px",
-                  },
-                }}
-              >
-                Technical Product Manager & GTM Strategy Lead
-              </MKTypography>
-              <MKTypography
-                flex={2}
-                display="flex"
-                flexDirection="column"
-                alignItems="start"
-                justifyContent="space-between"
-                sx={{
-                  fontSize: {
-                    xs: "12px",
-                    sm: "14px",
-                    md: "16px",
-                    lg: "18px",
-                    xl: "20px",
-                  },
-                }}
-              >
-                <li>Voyage 1</li>
-                <li>Voyage 2</li>
-                <li>Voyage 3</li>
-              </MKTypography>
-            </MKBox>
-          </MKBox>
-          {/* TODO: Make responsive to screen resizing to text doesn't get cut off */}
-          <MKBox
-            position="relative"
-            width="100%"
-            display="flex"
-            flex={1}
-            flexDirection="row"
-            borderRadius="xl"
-            bgColor="white"
-            shadow="xl"
-            overflow="visible"
-            p={3}
-            sx={{
-              borderLeft: "2px solid #ffffff",
-              borderRight: "2px solid #ffffff",
-              borderTop: "2px solid #ffffff",
-              borderBottom: "2px solid #ffffff",
-              mx: 2,
-              my: 1,
-            }}
-          >
-            <MKBox
-              flex={1}
-              display="flex"
-              flexDirection="column"
-              position="relative"
-              overflow="visible"
-              sx={{
-                fontSize: "md",
-              }}
-            >
-              <MKBox
-                width="80%"
-                height="10%"
-                display="flex"
-                flexDirection="row"
-                flex={1}
-                borderRadius="xl"
-                bgColor="dark"
-                alignItems="center"
-                justifyContent="center"
-                shadow="xl"
-                overflow="auto"
-                p={3}
-                sx={{
-                  position: "absolute",
-                  top: "-25%",
-                  left: "0%",
-                  borderLeft: "2px solid dark",
-                  borderRight: "2px solid dark",
-                  borderTop: "2px solid dark",
-                  borderBottom: "2px solid dark",
-                  mx: 2,
-                  my: 1,
-                }}
-              >
-                <MKTypography
-                  color="white"
-                  fontWeight="bold"
-                  sx={{
-                    fontSize: {
-                      xs: "12px",
-                      sm: "14px",
-                      md: "16px",
-                      lg: "18px",
-                      xl: "20px",
-                    },
-                  }}
-                >
-                  2020 - 2022
-                </MKTypography>
-              </MKBox>
-              <Link
-                href="https://www.bain.com/"
-                target="_blank"
-                flex={5}
-                sx={{ cursor: "pointer", userSelect: "none" }}
-              >
-                <img
-                  src={bain}
-                  alt="bain"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
-                />
-              </Link>
-            </MKBox>
-            <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
-              <MKTypography
-                flex={1}
-                fontWeight="bold"
-                sx={{
-                  fontSize: {
-                    xs: "12px",
-                    sm: "14px",
-                    md: "16px",
-                    lg: "18px",
-                    xl: "20px",
-                  },
-                }}
-              >
-                Associate Consultant | Senior Associate Consultant
-              </MKTypography>
-              <MKTypography
-                flex={2}
-                display="flex"
-                flexDirection="column"
-                alignItems="start"
-                justifyContent="space-between"
-                sx={{
-                  fontSize: {
-                    xs: "12px",
-                    sm: "14px",
-                    md: "16px",
-                    lg: "18px",
-                    xl: "20px",
-                  },
-                }}
-              >
-                <li>Bain 1</li>
-                <li>Bain 2</li>
-                <li>Bain 3</li>
-              </MKTypography>
-            </MKBox>
-          </MKBox>
-          {/* TODO: Figure out how to make all cards same layout despite different image sizes */}
-          <MKBox
-            position="relative"
-            width="100%"
-            display="flex"
-            flex={1}
-            flexDirection="row"
-            justifyContent="space-between"
-            overflow="visible"
-            mx={2}
+            mx="auto"
             my={1}
+            gap={1}
           >
             <SmallCard
               company="kindeva"
@@ -334,8 +104,6 @@ function WorkExperience() {
               first={true}
               position="relative"
               height="100%"
-              width="100%"
-              flex={1}
               overflow="visible"
             ></SmallCard>
             <SmallCard
@@ -345,7 +113,6 @@ function WorkExperience() {
               time="2020"
               position="absolute"
               height="100%"
-              flex={1}
               overflow="visible"
             ></SmallCard>
             <SmallCard
@@ -355,7 +122,6 @@ function WorkExperience() {
               time="2019"
               position="absolute"
               height="100%"
-              flex={1}
               overflow="visible"
             ></SmallCard>
             <SmallCard
@@ -365,7 +131,6 @@ function WorkExperience() {
               time="2018"
               position="absolute"
               height="100%"
-              flex={1}
               overflow="visible"
             ></SmallCard>
             <SmallCard
@@ -376,451 +141,145 @@ function WorkExperience() {
               last={true}
               position="absolute"
               height="100%"
-              flex={1}
               overflow="visible"
             ></SmallCard>
-
-            {/* TODO: Delete below code once SmallCard formatting has been resolved */}
-            {/* <MKBox
-              position="relative"
-              width="100%"
-              display="flex"
-              flex={1}
-              flexDirection="column"
-              borderRadius="xl"
-              bgColor="white"
-              shadow="xl"
-              overflow="visible"
-              p={3}
-              sx={{
-                borderLeft: "2px solid #ffffff",
-                borderRight: "2px solid #ffffff",
-                borderTop: "2px solid #ffffff",
-                borderBottom: "2px solid #ffffff",
-                mr: 1,
-              }}
-            >
-              <MKBox
-                position="relative"
-                height="100%"
-                width="100%"
-                display="flex"
-                flexDirection="column"
-                overflow="visible"
-                sx={{
-                  fontSize: "md",
-                }}
-              >
-                <Link
-                  href="https://www.kindevadd.com/"
-                  target="_blank"
-                  flex={3}
-                  sx={{ cursor: "pointer", userSelect: "none" }}
-                >
-                  <img
-                    src={kindeva}
-                    alt="kindeva"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Link>
-                <MKBox
-                  width="80%"
-                  height="10%"
-                  display="flex"
-                  flexDirection="row"
-                  flex={1}
-                  borderRadius="xl"
-                  bgColor="dark"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow="xl"
-                  overflow="auto"
-                  p={3}
-                  sx={{
-                    position: "absolute",
-                    bottom: "-25%",
-                    left: "10%",
-                    borderLeft: "2px solid dark",
-                    borderRight: "2px solid dark",
-                    borderTop: "2px solid dark",
-                    borderBottom: "2px solid dark",
-                  }}
-                >
-                  <MKTypography
-                    color="white"
-                    fontWeight="bold"
-                    sx={{
-                      fontSize: {
-                        xs: "12px",
-                        sm: "14px",
-                        md: "16px",
-                        lg: "18px",
-                        xl: "20px",
-                      },
-                    }}
-                  >
-                    2020
-                  </MKTypography>
-                </MKBox>
-              </MKBox>
-            </MKBox>
-            <MKBox
-              position="relative"
-              width="100%"
-              display="flex"
-              flex={1}
-              flexDirection="column"
-              borderRadius="xl"
-              bgColor="white"
-              shadow="xl"
-              overflow="visible"
-              p={3}
-              sx={{
-                borderLeft: "2px solid #ffffff",
-                borderRight: "2px solid #ffffff",
-                borderTop: "2px solid #ffffff",
-                borderBottom: "2px solid #ffffff",
-                mr: 1,
-              }}
-            >
-              <MKBox
-                position="relative"
-                height="100%"
-                width="100%"
-                display="flex"
-                flexDirection="column"
-                overflow="visible"
-                sx={{
-                  fontSize: "md",
-                }}
-              >
-                <Link
-                  href="https://www.cornell.edu/"
-                  target="_blank"
-                  flex={3}
-                  sx={{ cursor: "pointer", userSelect: "none" }}
-                >
-                  <img
-                    src={cornell}
-                    alt="cornell"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Link>
-                <MKBox
-                  width="80%"
-                  height="10%"
-                  display="flex"
-                  flexDirection="row"
-                  flex={1}
-                  borderRadius="xl"
-                  bgColor="dark"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow="xl"
-                  overflow="auto"
-                  p={3}
-                  sx={{
-                    position: "absolute",
-                    bottom: "-25%",
-                    left: "10%",
-                    borderLeft: "2px solid dark",
-                    borderRight: "2px solid dark",
-                    borderTop: "2px solid dark",
-                    borderBottom: "2px solid dark",
-                  }}
-                >
-                  <MKTypography
-                    color="white"
-                    fontWeight="bold"
-                    sx={{
-                      fontSize: {
-                        xs: "12px",
-                        sm: "14px",
-                        md: "16px",
-                        lg: "18px",
-                        xl: "20px",
-                      },
-                    }}
-                  >
-                    2020
-                  </MKTypography>
-                </MKBox>
-              </MKBox>
-            </MKBox>
-            <MKBox
-              position="relative"
-              width="100%"
-              display="flex"
-              flex={1}
-              flexDirection="column"
-              borderRadius="xl"
-              bgColor="white"
-              shadow="xl"
-              overflow="visible"
-              p={3}
-              sx={{
-                borderLeft: "2px solid #ffffff",
-                borderRight: "2px solid #ffffff",
-                borderTop: "2px solid #ffffff",
-                borderBottom: "2px solid #ffffff",
-                mr: 1,
-              }}
-            >
-              <MKBox
-                position="relative"
-                height="100%"
-                width="100%"
-                display="flex"
-                flexDirection="column"
-                overflow="visible"
-                sx={{
-                  fontSize: "md",
-                }}
-              >
-                <Link
-                  href="https://www.pepsico.com/"
-                  target="_blank"
-                  flex={3}
-                  sx={{ cursor: "pointer", userSelect: "none" }}
-                >
-                  <img
-                    src={pepsico}
-                    alt="pepsico"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Link>
-                <MKBox
-                  width="80%"
-                  height="10%"
-                  display="flex"
-                  flexDirection="row"
-                  flex={1}
-                  borderRadius="xl"
-                  bgColor="dark"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow="xl"
-                  overflow="auto"
-                  p={3}
-                  sx={{
-                    position: "absolute",
-                    bottom: "-25%",
-                    left: "10%",
-                    borderLeft: "2px solid dark",
-                    borderRight: "2px solid dark",
-                    borderTop: "2px solid dark",
-                    borderBottom: "2px solid dark",
-                  }}
-                >
-                  <MKTypography
-                    color="white"
-                    fontWeight="bold"
-                    sx={{
-                      fontSize: {
-                        xs: "12px",
-                        sm: "14px",
-                        md: "16px",
-                        lg: "18px",
-                        xl: "20px",
-                      },
-                    }}
-                  >
-                    2020
-                  </MKTypography>
-                </MKBox>
-              </MKBox>
-            </MKBox>
-            <MKBox
-              position="relative"
-              width="100%"
-              display="flex"
-              flex={1}
-              flexDirection="column"
-              borderRadius="xl"
-              bgColor="white"
-              shadow="xl"
-              overflow="visible"
-              p={3}
-              sx={{
-                borderLeft: "2px solid #ffffff",
-                borderRight: "2px solid #ffffff",
-                borderTop: "2px solid #ffffff",
-                borderBottom: "2px solid #ffffff",
-                mr: 1,
-              }}
-            >
-              <MKBox
-                position="relative"
-                height="100%"
-                width="100%"
-                display="flex"
-                flexDirection="column"
-                overflow="visible"
-                sx={{
-                  fontSize: "md",
-                }}
-              >
-                <Link
-                  href="https://us.pg.com/"
-                  target="_blank"
-                  flex={3}
-                  sx={{ cursor: "pointer", userSelect: "none" }}
-                >
-                  <img
-                    src={pg}
-                    alt="p&g"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Link>
-                <MKBox
-                  width="80%"
-                  height="10%"
-                  display="flex"
-                  flexDirection="row"
-                  flex={1}
-                  borderRadius="xl"
-                  bgColor="dark"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow="xl"
-                  overflow="auto"
-                  p={3}
-                  sx={{
-                    position: "absolute",
-                    bottom: "-25%",
-                    left: "10%",
-                    borderLeft: "2px solid dark",
-                    borderRight: "2px solid dark",
-                    borderTop: "2px solid dark",
-                    borderBottom: "2px solid dark",
-                  }}
-                >
-                  <MKTypography
-                    color="white"
-                    fontWeight="bold"
-                    sx={{
-                      fontSize: {
-                        xs: "12px",
-                        sm: "14px",
-                        md: "16px",
-                        lg: "18px",
-                        xl: "20px",
-                      },
-                    }}
-                  >
-                    2020
-                  </MKTypography>
-                </MKBox>
-              </MKBox>
-            </MKBox>
-            <MKBox
-              position="relative"
-              width="100%"
-              display="flex"
-              flex={1}
-              flexDirection="column"
-              borderRadius="xl"
-              bgColor="white"
-              shadow="xl"
-              overflow="visible"
-              p={3}
-              sx={{
-                borderLeft: "2px solid #ffffff",
-                borderRight: "2px solid #ffffff",
-                borderTop: "2px solid #ffffff",
-                borderBottom: "2px solid #ffffff",
-                mr: 1,
-              }}
-            >
-              <MKBox
-                position="relative"
-                height="100%"
-                width="100%"
-                display="flex"
-                flexDirection="column"
-                overflow="visible"
-                sx={{
-                  fontSize: "md",
-                }}
-              >
-                <Link
-                  href="https://www.logicprep.com/"
-                  target="_blank"
-                  flex={3}
-                  sx={{ cursor: "pointer", userSelect: "none" }}
-                >
-                  <img
-                    src={lp}
-                    alt="logicprep"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Link>
-                <MKBox
-                  width="80%"
-                  height="10%"
-                  display="flex"
-                  flexDirection="row"
-                  flex={1}
-                  borderRadius="xl"
-                  bgColor="dark"
-                  alignItems="center"
-                  justifyContent="center"
-                  shadow="xl"
-                  overflow="auto"
-                  p={3}
-                  sx={{
-                    position: "absolute",
-                    bottom: "-25%",
-                    left: "10%",
-                    borderLeft: "2px solid dark",
-                    borderRight: "2px solid dark",
-                    borderTop: "2px solid dark",
-                    borderBottom: "2px solid dark",
-                  }}
-                >
-                  <MKTypography
-                    color="white"
-                    fontWeight="bold"
-                    sx={{
-                      fontSize: {
-                        xs: "12px",
-                        sm: "14px",
-                        md: "16px",
-                        lg: "18px",
-                        xl: "20px",
-                      },
-                    }}
-                  >
-                    2020
-                  </MKTypography>
-                </MKBox>
-              </MKBox>
-            </MKBox> */}
           </MKBox>
         </MKBox>
       </BrowserView>
 
-      <MobileView></MobileView>
+      <MobileView>
+        <MKBox
+          minHeight="100vh"
+          width="100%"
+          position="relative"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            placeItems: "center",
+            p: 3,
+          }}
+        >
+          <MKBox
+            position="absolute"
+            minHeight="100vh"
+            width="100%"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            sx={{
+              backgroundImage: `url(${mountains2})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: 0.75,
+            }}
+          ></MKBox>
+
+          {/* Big Cards Section */}
+          <BigCard
+            company="voyage"
+            logo={voyage}
+            url="https://www.voyagesms.com/"
+            time="Current"
+            titles="Technical Product Manager & GTM Strategy Lead"
+            title1="Technical Product Manager"
+            title2="& GTM Strategy Lead"
+            bullet1="Voyage 1"
+            bullet2="Voyage 2"
+            bullet3="Voyage 3"
+          ></BigCard>
+          <BigCard
+            company="bain"
+            logo={bain}
+            url="https://www.bain.com/"
+            time="2020 - 2022"
+            titles="Associate Consultant | Senior Associate Consultant"
+            title1="Associate Consultant |"
+            title2="Senior Associate Consultant"
+            bullet1="Bain 1"
+            bullet2="Bain 2"
+            bullet3="Bain 3"
+          ></BigCard>
+
+          {/* Small Cards Section */}
+          <MKBox
+            position="relative"
+            width="100%"
+            display="grid"
+            gridAutoFlow="row"
+            flex={1}
+            alignItems="start"
+            overflow="visible"
+            mx="auto"
+          >
+            <MKBox
+              position="relative"
+              width="100%"
+              display="grid"
+              gridAutoFlow="column"
+              overflow="visible"
+              gap={1}
+            >
+              <SmallCard
+                company="kindeva"
+                logo={kindeva}
+                url="https://www.kindevadd.com/"
+                time="2020"
+                first={true}
+                position="relative"
+                height="100%"
+                overflow="visible"
+              ></SmallCard>
+              <SmallCard
+                company="cornell"
+                logo={cornell}
+                url="https://www.cornell.edu/"
+                time="2020"
+                position="absolute"
+                height="100%"
+                overflow="visible"
+              ></SmallCard>
+            </MKBox>
+            <MKBox
+              position="relative"
+              width="100%"
+              display="grid"
+              gridAutoFlow="column"
+              overflow="visible"
+              gap={1}
+            >
+              <SmallCard
+                company="pepsico"
+                logo={pepsico}
+                url="https://www.pepsico.com/"
+                time="2019"
+                position="absolute"
+                height="100%"
+                overflow="visible"
+              ></SmallCard>
+              <SmallCard
+                company="p&g"
+                logo={pg}
+                url="https://us.pg.com/"
+                time="2018"
+                position="absolute"
+                height="100%"
+                overflow="visible"
+              ></SmallCard>
+              <SmallCard
+                company="logicprep"
+                logo={lp}
+                url="https://www.logicprep.com/"
+                time="2017"
+                last={true}
+                position="absolute"
+                height="100%"
+                overflow="visible"
+              ></SmallCard>
+            </MKBox>
+          </MKBox>
+        </MKBox>
+      </MobileView>
     </>
   );
 }
