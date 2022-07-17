@@ -15,6 +15,10 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
+// My components
+import BigCard from "components/my-components/BigCard";
+import SmallCard from "components/my-components/SmallCard";
+
 // Images
 import mountains2 from "assets/images/my-images/Black_Mountains.jpg";
 import voyage from "assets/images/my-images/voyage_logo.png";
@@ -112,10 +116,19 @@ function WorkExperience() {
                   my: 1,
                 }}
               >
-                <MKTypography color="white" fontWeight="bold"
-                  sx = {{
-                    fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                  }}>
+                <MKTypography
+                  color="white"
+                  fontWeight="bold"
+                  sx={{
+                    fontSize: {
+                      xs: "12px",
+                      sm: "14px",
+                      md: "16px",
+                      lg: "18px",
+                      xl: "20px",
+                    },
+                  }}
+                >
                   Current
                 </MKTypography>
               </MKBox>
@@ -137,10 +150,19 @@ function WorkExperience() {
               </Link>
             </MKBox>
             <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
-              <MKTypography flex={1} fontWeight="bold"
-                sx = {{
-                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                }}>
+              <MKTypography
+                flex={1}
+                fontWeight="bold"
+                sx={{
+                  fontSize: {
+                    xs: "12px",
+                    sm: "14px",
+                    md: "16px",
+                    lg: "18px",
+                    xl: "20px",
+                  },
+                }}
+              >
                 Technical Product Manager & GTM Strategy Lead
               </MKTypography>
               <MKTypography
@@ -149,8 +171,14 @@ function WorkExperience() {
                 flexDirection="column"
                 alignItems="start"
                 justifyContent="space-between"
-                sx = {{
-                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                sx={{
+                  fontSize: {
+                    xs: "12px",
+                    sm: "14px",
+                    md: "16px",
+                    lg: "18px",
+                    xl: "20px",
+                  },
                 }}
               >
                 <li>Voyage 1</li>
@@ -215,10 +243,19 @@ function WorkExperience() {
                   my: 1,
                 }}
               >
-                <MKTypography color="white" fontWeight="bold"
-                  sx = {{
-                    fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                  }}>
+                <MKTypography
+                  color="white"
+                  fontWeight="bold"
+                  sx={{
+                    fontSize: {
+                      xs: "12px",
+                      sm: "14px",
+                      md: "16px",
+                      lg: "18px",
+                      xl: "20px",
+                    },
+                  }}
+                >
                   2020 - 2022
                 </MKTypography>
               </MKBox>
@@ -240,10 +277,19 @@ function WorkExperience() {
               </Link>
             </MKBox>
             <MKBox flex={4} p={3} mx={2} display="flex" flexDirection="column">
-              <MKTypography flex={1} fontWeight="bold"
-                sx = {{
-                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                }}>
+              <MKTypography
+                flex={1}
+                fontWeight="bold"
+                sx={{
+                  fontSize: {
+                    xs: "12px",
+                    sm: "14px",
+                    md: "16px",
+                    lg: "18px",
+                    xl: "20px",
+                  },
+                }}
+              >
                 Associate Consultant | Senior Associate Consultant
               </MKTypography>
               <MKTypography
@@ -252,8 +298,14 @@ function WorkExperience() {
                 flexDirection="column"
                 alignItems="start"
                 justifyContent="space-between"
-                sx = {{
-                  fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
+                sx={{
+                  fontSize: {
+                    xs: "12px",
+                    sm: "14px",
+                    md: "16px",
+                    lg: "18px",
+                    xl: "20px",
+                  },
                 }}
               >
                 <li>Bain 1</li>
@@ -274,7 +326,62 @@ function WorkExperience() {
             mx={2}
             my={1}
           >
-            <MKBox
+            <SmallCard
+              company="kindeva"
+              logo={kindeva}
+              url="https://www.kindevadd.com/"
+              time="2020"
+              first={true}
+              position="relative"
+              height="100%"
+              width="100%"
+              flex={1}
+              overflow="visible"
+            ></SmallCard>
+            <SmallCard
+              company="cornell"
+              logo={cornell}
+              url="https://www.cornell.edu/"
+              time="2020"
+              position="absolute"
+              height="100%"
+              flex={1}
+              overflow="visible"
+            ></SmallCard>
+            <SmallCard
+              company="pepsico"
+              logo={pepsico}
+              url="https://www.pepsico.com/"
+              time="2019"
+              position="absolute"
+              height="100%"
+              flex={1}
+              overflow="visible"
+            ></SmallCard>
+            <SmallCard
+              company="p&g"
+              logo={pg}
+              url="https://us.pg.com/"
+              time="2018"
+              position="absolute"
+              height="100%"
+              flex={1}
+              overflow="visible"
+            ></SmallCard>
+            <SmallCard
+              company="logicprep"
+              logo={lp}
+              url="https://www.logicprep.com/"
+              time="2017"
+              last={true}
+              position="absolute"
+              height="100%"
+              flex={1}
+              overflow="visible"
+            ></SmallCard>
+
+            {/* TODO: Delete below code once SmallCard formatting has been resolved */}
+            {/* <MKBox
               position="relative"
               width="100%"
               display="flex"
@@ -343,10 +450,19 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold"
-                    sx = {{
-                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                    }}>
+                  <MKTypography
+                    color="white"
+                    fontWeight="bold"
+                    sx={{
+                      fontSize: {
+                        xs: "12px",
+                        sm: "14px",
+                        md: "16px",
+                        lg: "18px",
+                        xl: "20px",
+                      },
+                    }}
+                  >
                     2020
                   </MKTypography>
                 </MKBox>
@@ -421,10 +537,19 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold"
-                    sx = {{
-                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                    }}>
+                  <MKTypography
+                    color="white"
+                    fontWeight="bold"
+                    sx={{
+                      fontSize: {
+                        xs: "12px",
+                        sm: "14px",
+                        md: "16px",
+                        lg: "18px",
+                        xl: "20px",
+                      },
+                    }}
+                  >
                     2020
                   </MKTypography>
                 </MKBox>
@@ -499,10 +624,19 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold"
-                  sx = {{
-                    fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                  }}>
+                  <MKTypography
+                    color="white"
+                    fontWeight="bold"
+                    sx={{
+                      fontSize: {
+                        xs: "12px",
+                        sm: "14px",
+                        md: "16px",
+                        lg: "18px",
+                        xl: "20px",
+                      },
+                    }}
+                  >
                     2020
                   </MKTypography>
                 </MKBox>
@@ -577,10 +711,19 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold"
-                    sx = {{
-                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                    }}>
+                  <MKTypography
+                    color="white"
+                    fontWeight="bold"
+                    sx={{
+                      fontSize: {
+                        xs: "12px",
+                        sm: "14px",
+                        md: "16px",
+                        lg: "18px",
+                        xl: "20px",
+                      },
+                    }}
+                  >
                     2020
                   </MKTypography>
                 </MKBox>
@@ -655,15 +798,24 @@ function WorkExperience() {
                     borderBottom: "2px solid dark",
                   }}
                 >
-                  <MKTypography color="white" fontWeight="bold"
-                    sx = {{
-                      fontSize: {xs: "12px", sm: "14px", md: "16px", lg: "18px", xl: "20px"}
-                    }}>
+                  <MKTypography
+                    color="white"
+                    fontWeight="bold"
+                    sx={{
+                      fontSize: {
+                        xs: "12px",
+                        sm: "14px",
+                        md: "16px",
+                        lg: "18px",
+                        xl: "20px",
+                      },
+                    }}
+                  >
                     2020
                   </MKTypography>
                 </MKBox>
               </MKBox>
-            </MKBox>
+            </MKBox> */}
           </MKBox>
         </MKBox>
       </BrowserView>
