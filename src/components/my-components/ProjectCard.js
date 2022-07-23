@@ -9,8 +9,12 @@ import Link from "@mui/material/Link";
 // MUIKit2 Components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import MKAvatar from "components/MKAvatar";
 
-function SmallCard({ company, logo, url, time, first, last, ...rest }) {
+// my images
+import ghlogo from "assets/images/my-images/github_logo.png";
+
+function ProjectCard({ projname, bgimg, url, txt, groupcount, ...rest }) {
   return (
     <>
       <BrowserView>
@@ -32,19 +36,66 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
             borderBottom: "2px solid #ffffff",
           }}
         >
+          <MKAvatar
+            overflow="auto"
+            bgColor="light"
+            sx={{
+              width: {
+                xs: "10%",
+                sm: "7.5%",
+                md: "7.5%",
+                lg: "5%",
+                xl: "5%",
+              },
+              height: "auto",
+              position: "absolute",
+              top: {
+                xs: "-2.5%",
+                sm: "-2.5%",
+                md: "-2.5%",
+                lg: "-2.5%",
+                xl: "-2.5%",
+              },
+              right: {
+                xs: "-2.5%",
+                sm: "-2.5%",
+                md: "-2.5%",
+                lg: "-2.5%",
+                xl: "-2.5%",
+              },
+            }}
+          >
+            <Link
+              href={url}
+              height="100%"
+              target="_blank"
+              sx={{ cursor: "pointer", userSelect: "none" }}
+              position="relative"
+            >
+              <img
+                src={ghlogo}
+                alt="github"
+                style={{
+                  objectFit: "contain",
+                  height: "100%",
+                  width: "100%",
+                }}
+              />
+            </Link>
+          </MKAvatar>
           <Link
             href={url}
             height="100%"
             // Change divisor # based on # of small cards included
-            maxWidth={window.innerWidth / 5}
+            maxWidth={window.innerWidth / groupcount}
             target="_blank"
             flex={3}
             sx={{ cursor: "pointer", userSelect: "none" }}
             position="relative"
           >
             <img
-              src={logo}
-              alt={company}
+              src={bgimg}
+              alt={projname}
               style={{
                 objectFit: "contain",
                 height: "100%",
@@ -63,16 +114,16 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
             alignItems="center"
             justifyContent="center"
             shadow="xl"
-            overflow="visible"
+            overflow="auto"
             p={3}
             sx={{
               position: "absolute",
               bottom: {
-                xs: "-30%",
-                sm: "-25%",
-                md: "-20%",
-                lg: "-15%",
-                xl: "-10%"
+                xs: "-20%",
+                sm: "-15%",
+                md: "-12.5%",
+                lg: "-10%",
+                xl: "-7.5%",
               },
               left: "10%",
               borderLeft: "2px solid dark",
@@ -86,7 +137,7 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
               fontWeight="bold"
               sx={{
                 fontSize: {
-                  xs: "12px",
+                  xs: "11px",
                   sm: "14px",
                   md: "16px",
                   lg: "18px",
@@ -94,7 +145,7 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
                 },
               }}
             >
-              {time}
+              {txt}
             </MKTypography>
           </MKBox>
         </MKBox>
@@ -121,19 +172,66 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
             borderBottom: "2px solid #ffffff",
           }}
         >
+          <MKAvatar
+            overflow="auto"
+            bgColor="light"
+            sx={{
+              width: {
+                xs: "10%",
+                sm: "7.5%",
+                md: "7.5%",
+                lg: "5%",
+                xl: "5%",
+              },
+              height: "auto",
+              position: "absolute",
+              top: {
+                xs: "-2.5%",
+                sm: "-2.5%",
+                md: "-2.5%",
+                lg: "-2.5%",
+                xl: "-2.5%",
+              },
+              right: {
+                xs: "-2.5%",
+                sm: "-2.5%",
+                md: "-2.5%",
+                lg: "-2.5%",
+                xl: "-2.5%",
+              },
+            }}
+          >
+            <Link
+              href={url}
+              height="100%"
+              target="_blank"
+              sx={{ cursor: "pointer", userSelect: "none" }}
+              position="relative"
+            >
+              <img
+                src={ghlogo}
+                alt="github"
+                style={{
+                  objectFit: "contain",
+                  height: "100%",
+                  width: "100%",
+                }}
+              />
+            </Link>
+          </MKAvatar>
           <Link
             href={url}
             height="100%"
             // Change divisor # based on # of small cards included
-            maxWidth={window.innerWidth / 5}
+            maxWidth={window.innerWidth / groupcount}
             target="_blank"
             flex={3}
             sx={{ cursor: "pointer", userSelect: "none" }}
             position="relative"
           >
             <img
-              src={logo}
-              alt={company}
+              src={bgimg}
+              alt={projname}
               style={{
                 objectFit: "contain",
                 height: "100%",
@@ -152,7 +250,7 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
             alignItems="center"
             justifyContent="center"
             shadow="xl"
-            overflow="visible"
+            overflow="auto"
             p={2}
             sx={{
               position: "absolute",
@@ -177,7 +275,7 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
                 },
               }}
             >
-              {time}
+              {txt}
             </MKTypography>
           </MKBox>
         </MKBox>
@@ -186,9 +284,8 @@ function SmallCard({ company, logo, url, time, first, last, ...rest }) {
   );
 }
 
-SmallCard.defaultProps = {
-  first: false,
-  last: false,
+ProjectCard.defaultProps = {
+  groupcount: 2,
 };
 
-export default SmallCard;
+export default ProjectCard;

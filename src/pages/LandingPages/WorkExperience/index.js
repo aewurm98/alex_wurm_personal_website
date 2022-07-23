@@ -67,10 +67,10 @@ function WorkExperience() {
             logo={voyage}
             url="https://www.voyagesms.com/"
             time="Current"
-            titles="Technical Product Manager & GTM Strategy Lead"
-            bullet1="Voyage 1"
-            bullet2="Voyage 2"
-            bullet3="Voyage 3"
+            titles="Technical Product & GTM Strategy Manager | Head of Growth Strategy & GM of LiveRecover"
+            bullet1="Managed CPaaS provider transition; saving ~$250K/yr"
+            bullet2="Founded data ops team to refactor codebase and stand up headless BI system"
+            bullet3="Responsible for ~$1M/year P&L for acquired LiveRecover business"
           ></BigCard>
           <BigCard
             company="bain"
@@ -78,9 +78,9 @@ function WorkExperience() {
             url="https://www.bain.com/"
             time="2020 - 2022"
             titles="Associate Consultant | Senior Associate Consultant"
-            bullet1="Bain 1"
-            bullet2="Bain 2"
-            bullet3="Bain 3"
+            bullet1="Led multiple B2B SaaS diligences >$100M ARR (incl. acquisitions of Cloudera, Boomi)"
+            bullet2="Created agile innovation playbook for Fortune 100 CPG leader; reduced launch timeline by 60%"
+            bullet3="Led $200M procurement process with direct report; achieved ~30% inflation mitigation"
           ></BigCard>
 
           {/* Small Cards Section */}
@@ -93,7 +93,7 @@ function WorkExperience() {
             justifyContent="start"
             overflow="visible"
             mx="auto"
-            my={1}
+            my={3}
             gap={1}
           >
             <SmallCard
@@ -181,12 +181,12 @@ function WorkExperience() {
             logo={voyage}
             url="https://www.voyagesms.com/"
             time="Current"
-            titles="Technical Product Manager & GTM Strategy Lead"
-            title1="Technical Product Manager"
-            title2="& GTM Strategy Lead"
-            bullet1="Voyage 1"
-            bullet2="Voyage 2"
-            bullet3="Voyage 3"
+            titles="Technical Product & GTM Strategy Manager"
+            title1="Technical Product & GTM Strategy Manager |"
+            title2="Head of Growth Strategy & GM of LiveRecover"
+            bullet1="Managed CPaaS provider transition; saving ~$250K/yr"
+            bullet2="Founded data ops team to refactor codebase and stand up headless BI system"
+            bullet3="Responsible for ~$1M/year P&L for acquired LiveRecover business"
           ></BigCard>
           <BigCard
             company="bain"
@@ -196,9 +196,9 @@ function WorkExperience() {
             titles="Associate Consultant | Senior Associate Consultant"
             title1="Associate Consultant |"
             title2="Senior Associate Consultant"
-            bullet1="Bain 1"
-            bullet2="Bain 2"
-            bullet3="Bain 3"
+            bullet1="Led multiple B2B SaaS diligences >$100M ARR (incl. acquisitions of Cloudera, Boomi)"
+            bullet2="Created agile innovation playbook for Fortune 100 CPG leader; reduced launch timeline by 60%"
+            bullet3="Led $200M procurement process with direct report; achieved ~30% inflation mitigation"
           ></BigCard>
 
           {/* Small Cards Section */}

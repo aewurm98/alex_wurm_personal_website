@@ -44,7 +44,7 @@ function BigCard({
             borderRight: "2px solid #ffffff",
             borderTop: "2px solid #ffffff",
             borderBottom: "2px solid #ffffff",
-            my: 1,
+            my: 3,
           }}
         >
           <MKBox
@@ -66,7 +66,7 @@ function BigCard({
               alignItems="center"
               justifyContent="center"
               shadow="xl"
-              overflow="auto"
+              overflow="visible"
               p={3}
               sx={{
                 width: {
@@ -254,7 +254,7 @@ function BigCard({
               />
             </Link>
           </MKBox>
-          <MKBox flex={1} p={2} mx={2} display="flex" flexDirection="column">
+          <MKBox flex={1} p={0} mx={2} display="flex" flexDirection="column">
             <MKTypography
               flex={1}
               fontWeight="bold"
