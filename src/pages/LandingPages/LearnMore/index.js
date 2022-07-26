@@ -13,6 +13,9 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
+// My Components
+import ButtonMailTo from "components/my-components/ButtonMailTo";
+
 // Images
 import mountains4 from "assets/images/my-images/Turquoise_Mountains.jpg";
 
@@ -21,8 +24,9 @@ function LearnMore() {
   return (
     <>
       <BrowserView>
+      {/* TODO: Implement actuals buttons - one for email, and one for checking out substack */}
         <MKBox
-          minHeight="100vh"
+          minHeight="10vh"
           width="100%"
           position="relative"
           sx={{
@@ -34,7 +38,7 @@ function LearnMore() {
         >
           <MKBox
             position="absolute"
-            minHeight="100vh"
+            minHeight="10vh"
             width="100%"
             top={0}
             left={0}
@@ -47,11 +51,12 @@ function LearnMore() {
               opacity: 0.75,
             }}
           ></MKBox>
-        </MKBox>
+          </MKBox>
       </BrowserView>
 
       <MobileView>
-        <MKBox
+      {/* TODO: Implement actuals buttons - one for email, and one for checking out substack */}
+      <MKBox
           minHeight="100vh"
           width="100%"
           position="relative"
