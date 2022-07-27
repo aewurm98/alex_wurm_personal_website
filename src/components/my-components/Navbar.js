@@ -7,9 +7,6 @@ import { Link as LinkS } from "react-scroll";
 // other react library components
 import OutsideClickHandler from "react-outside-click-handler";
 
-// prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";
-
 // @mui material components
 import Container from "@mui/material/Container";
 import Icon from "@mui/material/Icon";
@@ -38,7 +35,7 @@ const routeWorkExperience = "work-experience";
 const routeProjects = "projects";
 const routeLearnMore = "learn-more"
 
-//TODO: Investigate porential to increase span size to make clicking easier
+//TODO: Investigate potential to increase span size to make clicking easier
 function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
   
   // Helper Functions
@@ -59,10 +56,6 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
   }
 
   // Function that updates visibility of sections as the user scrolls to save in local storage for page refresh
-
-  // function storeView() {
-
-  // }
 
   // Function that updates the offsets of each section
   function updateOffsets() {
@@ -106,14 +99,6 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
     const [projectsInView, setProjectsInView] = useState(false);
     const [learnInView, setLearnInView] = useState(false);
 
-  // Constants
-
-  // Constants related to local storage TODO: Figure out how to avoid circular logic and fix refresh killing navbar view
-  // const aboutInitial = (JSON.parse(window.localStorage.getItem('About_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('About_Section_Visibility')) : aboutInView;
-  // const workInitial = (JSON.parse(window.localStorage.getItem('Work_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('Work_Section_Visibility')) : workInView;
-  // const projectsInitial = (JSON.parse(window.localStorage.getItem('Projects_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('Projects_Section_Visibility')) : projectsInView;
-  // const learnInitial = (JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')) !== null) ? JSON.parse(window.localStorage.getItem('Learn_Section_Visibility')) : learnInView;
-  
   // More Hooks
 
   // A Hook that updates the offsets of each section when the page loads, to account for different window sizes
@@ -237,7 +222,7 @@ function Navbar({ logo, brand, transparent, light, sticky, relative, center}) {
       
       //Overall Navbar
       <Container
-        sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}
+        sx={sticky ? { position: "sticky", top: "-10px", zIndex: 10 } : null}
       >
         {/* /Makes sure Navbar closes when clicking out */}
         <OutsideClickHandler onOutsideClick={() => setMobileNavbar(false)}>

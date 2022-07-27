@@ -37,7 +37,7 @@ function ProjectCard({ projname, bgimg, url, txt, groupcount, ...rest }) {
           }}
         >
           <MKAvatar
-            overflow="auto"
+            overflow="visible"
             bgColor="light"
             sx={{
               width: {
@@ -114,7 +114,7 @@ function ProjectCard({ projname, bgimg, url, txt, groupcount, ...rest }) {
             alignItems="center"
             justifyContent="center"
             shadow="xl"
-            overflow="auto"
+            overflow="visible"
             p={3}
             sx={{
               position: "absolute",
@@ -173,7 +173,7 @@ function ProjectCard({ projname, bgimg, url, txt, groupcount, ...rest }) {
           }}
         >
           <MKAvatar
-            overflow="auto"
+            overflow="visible"
             bgColor="light"
             sx={{
               width: {
@@ -250,7 +250,7 @@ function ProjectCard({ projname, bgimg, url, txt, groupcount, ...rest }) {
             alignItems="center"
             justifyContent="center"
             shadow="xl"
-            overflow="auto"
+            overflow="visible"
             p={2}
             sx={{
               position: "absolute",

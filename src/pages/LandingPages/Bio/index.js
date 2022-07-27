@@ -11,7 +11,6 @@ import ButtonMailTo from "components/my-components/ButtonMailTo";
 // Images
 import mountains1 from "assets/images/my-images/Blue_Mountains.jpg";
 
-//TODO: Update BrowserView to be responsive to size changes
 function Bio() {
   return (
     <>
@@ -255,7 +254,6 @@ function Bio() {
                 insights, product design, and go-to-market strategy from concept
                 through scale.
               </MKTypography>
-              {/* TODO: Implement mailto: hyperlink here */}
               <MKTypography
                 variant="body1"
                 color="secondary"

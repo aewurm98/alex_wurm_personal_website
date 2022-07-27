@@ -4,20 +4,16 @@ import { BrowserView, MobileView } from "react-device-detect";
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
-import { spacing } from "@mui/system";
 
 // MUIKit2 Components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 
 // Images
 import alex from "assets/images/my-images/Alex_Nature_Zoom.png";
 import bgi from "assets/images/my-images/Abstract_Lines.jpg";
 
-//TODO: Go back into each section and flex minheight with screensize so socials show immediately on mobile
 function HeroSection() {
   return (
     <>
@@ -64,8 +60,6 @@ function HeroSection() {
               lg: "center",
               xl: "center",
             }}
-            // spacing not needed with flex fill
-            // spacing={{ xs: 28, sm: 40, md: 44, lg: 28, xl: 40 }}
             minHeight="100vh"
             width="100%"
             overflow="visible"

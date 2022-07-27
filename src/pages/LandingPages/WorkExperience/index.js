@@ -1,19 +1,8 @@
 // React components
 import { BrowserView, MobileView } from "react-device-detect";
-// import { Link } from "react-router-dom";
-
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import Stack from "@mui/material/Stack";
-import { spacing } from "@mui/system";
-import Link from "@mui/material/Link";
 
 // MUIKit2 Components
 import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 
 // My components
 import BigCard from "components/my-components/BigCard";
@@ -29,7 +18,6 @@ import pepsico from "assets/images/my-images/Pepsico_logo.png";
 import pg from "assets/images/my-images/Procter_Gamble_logo.png";
 import lp from "assets/images/my-images/Logicprep_logo.png";
 
-//TODO: Update BrowserView to be responsive to size changes
 function WorkExperience() {
   return (
     <>

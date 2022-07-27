@@ -1,17 +1,8 @@
 // React components
 import { BrowserView, MobileView } from "react-device-detect";
 
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-import Stack from "@mui/material/Stack";
-import { spacing } from "@mui/system";
-
 // MUIKit2 Components
 import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
-import MKButton from "components/MKButton";
 
 // My components
 import ProjectCard from "components/my-components/ProjectCard";
@@ -22,7 +13,6 @@ import kaytoo from "assets/images/my-images/kaytoo_mockups.png";
 import nba from "assets/images/my-images/nba_players_stock_photo.jpeg";
 import comingsoon from "assets/images/my-images/coming_soon.png";
 
-//TODO: Update BrowserView to be responsive to size changes
 function Projects() {
   return (
     <>
