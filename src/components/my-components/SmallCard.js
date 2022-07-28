@@ -10,7 +10,7 @@ import Link from "@mui/material/Link";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function SmallCard({ company, logo, url, time, first, last, ...rest }) {
+function SmallCard({ company, logo, url, time, first, last, ...rest}) {
   return (
     <>
       <BrowserView>
