@@ -12,6 +12,7 @@ import mountains3 from "assets/images/my-images/Orange_Mountains.jpg";
 import kaytoo from "assets/images/my-images/kaytoo_mockups.png";
 import nba from "assets/images/my-images/nba_players_stock_photo.jpeg";
 import comingsoon from "assets/images/my-images/coming_soon.png";
+import reactdev from "assets/images/my-images/react_website_development_stock_photo.jpg";
 
 function Projects() {
   return (
@@ -66,10 +67,10 @@ function Projects() {
               my="auto"
             >
               <ProjectCard
-                projname="kaytoo"
-                bgimg={kaytoo}
-                url="https://kaytoo-app.com/"
-                txt="Kaytoo, Inc."
+                projname="my-website"
+                bgimg={reactdev}
+                url="https://github.com/aewurm98/alex_wurm_personal_website"
+                txt="This Website!"
                 groupcount={2}
                 position="relative"
                 height="100%"
@@ -78,7 +79,7 @@ function Projects() {
               <ProjectCard
                 projname="nba-stats"
                 bgimg={nba}
-                url="https://github.com/aewurm98"
+                url="https://github.com/aewurm98/alex_wurm_nba_stats_with_python"
                 txt="NBA Stats in Python"
                 groupcount={2}
                 position="relative"
@@ -97,10 +98,10 @@ function Projects() {
               my={5}
             >
               <ProjectCard
-                projname="ar-basketball"
-                bgimg={comingsoon}
-                url="https://github.com/aewurm98"
-                txt="AR Basketball App"
+                projname="kaytoo"
+                bgimg={kaytoo}
+                url="https://kaytoo-app.com/"
+                txt="Kaytoo, Inc."
                 groupcount={2}
                 position="relative"
                 height="100%"
@@ -159,10 +160,10 @@ function Projects() {
             mx="auto"
           >
             <ProjectCard
-              projname="kaytoo"
-              bgimg={kaytoo}
-              url="https://kaytoo-app.com/"
-              txt="Kaytoo, Inc."
+              projname="my-website"
+              bgimg={reactdev}
+              url="https://github.com/aewurm98/alex_wurm_personal_website"
+              txt="This Website!"
               groupcount={2}
               position="relative"
               height="100%"
@@ -171,7 +172,7 @@ function Projects() {
             <ProjectCard
               projname="nba-stats"
               bgimg={nba}
-              url="https://github.com/aewurm98"
+              url="https://github.com/aewurm98/alex_wurm_nba_stats_with_python"
               txt="NBA Stats in Python"
               groupcount={2}
               position="relative"
@@ -179,10 +180,10 @@ function Projects() {
               overflow="visible"
             ></ProjectCard>
             <ProjectCard
-              projname="ar-basketball"
-              bgimg={comingsoon}
-              url="https://github.com/aewurm98"
-              txt="AR Basketball App"
+              projname="kaytoo"
+              bgimg={kaytoo}
+              url="https://kaytoo-app.com/"
+              txt="Kaytoo, Inc."
               groupcount={2}
               position="relative"
               height="100%"

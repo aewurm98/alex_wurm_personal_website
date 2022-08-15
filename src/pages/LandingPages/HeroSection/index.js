@@ -110,7 +110,7 @@ function HeroSection() {
                       },
                     })}
                   >
-                    Product Manager
+                    Product & Growth Leader
                   </MKTypography>
                   <MKTypography
                     variant="h2"
@@ -297,7 +297,7 @@ function HeroSection() {
                         },
                       })}
                     >
-                      Product Manager
+                      Product & Growth Leader
                     </MKTypography>
                     <MKTypography
                       variant="h2"

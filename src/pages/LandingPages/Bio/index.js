@@ -114,8 +114,8 @@ function Bio() {
                 fontWeight="regular"
                 my={3}
               >
-                I am a software product leader with a background in engineering
-                and management consulting.
+                I am a software product leader & growth hacker with a background
+                in engineering and management consulting.
               </MKTypography>
               <MKTypography
                 variant="body1"
@@ -241,8 +241,8 @@ function Bio() {
                 fontWeight="regular"
                 my={3}
               >
-                I am a software product leader with a background in engineering
-                and management consulting.
+                I am a software product leader & growth hacker with a background
+                in engineering and management consulting.
               </MKTypography>
               <MKTypography
                 variant="body1"
