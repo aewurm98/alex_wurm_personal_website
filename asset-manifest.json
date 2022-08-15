@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/alex_wurm_personal_website/static/css/main.2806db11.css",
-    "main.js": "/alex_wurm_personal_website/static/js/main.e1fb8458.js",
-    "static/media/Alex_Nature_Zoom.png": "/alex_wurm_personal_website/static/media/Alex_Nature_Zoom.225da70429537db2bcd9.png",
-    "static/media/react_website_development_stock_photo.jpg": "/alex_wurm_personal_website/static/media/react_website_development_stock_photo.cf7b6bd11cab94294c3e.jpg",
-    "static/media/Turquoise_Mountains.jpg": "/alex_wurm_personal_website/static/media/Turquoise_Mountains.0bec48f4a1ae72c9a7f5.jpg",
-    "static/media/alex_in_mountains.jpeg": "/alex_wurm_personal_website/static/media/alex_in_mountains.3af66ffc3ae21f224e0a.jpeg",
-    "static/media/Blue_Mountains.jpg": "/alex_wurm_personal_website/static/media/Blue_Mountains.9b267f8a990456344592.jpg",
-    "static/media/kaytoo_mockups.png": "/alex_wurm_personal_website/static/media/kaytoo_mockups.2b3a5ab52ecd291a859e.png",
-    "static/media/Orange_Mountains.jpg": "/alex_wurm_personal_website/static/media/Orange_Mountains.6f83f556fa3bdbb1ae74.jpg",
-    "static/media/Cornell_logo.png": "/alex_wurm_personal_website/static/media/Cornell_logo.c3937e79040314c30cd5.png",
-    "static/media/Procter_Gamble_logo.png": "/alex_wurm_personal_website/static/media/Procter_Gamble_logo.f5f7a3a92f094d91d1da.png",
-    "static/media/nba_players_stock_photo.jpeg": "/alex_wurm_personal_website/static/media/nba_players_stock_photo.b840c4c2c7dfada1e340.jpeg",
-    "static/media/Abstract_Lines.jpg": "/alex_wurm_personal_website/static/media/Abstract_Lines.f7faa0b9444f6fdb7203.jpg",
-    "static/media/Black_Mountains.jpg": "/alex_wurm_personal_website/static/media/Black_Mountains.62c4b6be91f313c21cb6.jpg",
-    "static/media/bain_logo.png": "/alex_wurm_personal_website/static/media/bain_logo.2844526d454212112eff.png",
-    "static/media/Pepsico_logo.png": "/alex_wurm_personal_website/static/media/Pepsico_logo.573ee261034e2118c0c5.png",
-    "static/media/voyage_logo.png": "/alex_wurm_personal_website/static/media/voyage_logo.867de20595b538089991.png",
-    "static/media/Logicprep_logo.png": "/alex_wurm_personal_website/static/media/Logicprep_logo.72264841a66bf45d9571.png",
-    "static/media/Kindeva_logo.png": "/alex_wurm_personal_website/static/media/Kindeva_logo.0d3bb7d0d4f108c967d2.png",
-    "index.html": "/alex_wurm_personal_website/index.html",
-    "main.2806db11.css.map": "/alex_wurm_personal_website/static/css/main.2806db11.css.map",
-    "main.e1fb8458.js.map": "/alex_wurm_personal_website/static/js/main.e1fb8458.js.map"
+    "main.css": "/static/css/main.2806db11.css",
+    "main.js": "/static/js/main.a8c938ff.js",
+    "static/media/Alex_Nature_Zoom.png": "/static/media/Alex_Nature_Zoom.225da70429537db2bcd9.png",
+    "static/media/react_website_development_stock_photo.jpg": "/static/media/react_website_development_stock_photo.cf7b6bd11cab94294c3e.jpg",
+    "static/media/Turquoise_Mountains.jpg": "/static/media/Turquoise_Mountains.0bec48f4a1ae72c9a7f5.jpg",
+    "static/media/alex_in_mountains.jpeg": "/static/media/alex_in_mountains.3af66ffc3ae21f224e0a.jpeg",
+    "static/media/Blue_Mountains.jpg": "/static/media/Blue_Mountains.9b267f8a990456344592.jpg",
+    "static/media/kaytoo_mockups.png": "/static/media/kaytoo_mockups.2b3a5ab52ecd291a859e.png",
+    "static/media/Orange_Mountains.jpg": "/static/media/Orange_Mountains.6f83f556fa3bdbb1ae74.jpg",
+    "static/media/Cornell_logo.png": "/static/media/Cornell_logo.c3937e79040314c30cd5.png",
+    "static/media/Procter_Gamble_logo.png": "/static/media/Procter_Gamble_logo.f5f7a3a92f094d91d1da.png",
+    "static/media/nba_players_stock_photo.jpeg": "/static/media/nba_players_stock_photo.b840c4c2c7dfada1e340.jpeg",
+    "static/media/Abstract_Lines.jpg": "/static/media/Abstract_Lines.f7faa0b9444f6fdb7203.jpg",
+    "static/media/Black_Mountains.jpg": "/static/media/Black_Mountains.62c4b6be91f313c21cb6.jpg",
+    "static/media/bain_logo.png": "/static/media/bain_logo.2844526d454212112eff.png",
+    "static/media/Pepsico_logo.png": "/static/media/Pepsico_logo.573ee261034e2118c0c5.png",
+    "static/media/voyage_logo.png": "/static/media/voyage_logo.867de20595b538089991.png",
+    "static/media/Logicprep_logo.png": "/static/media/Logicprep_logo.72264841a66bf45d9571.png",
+    "static/media/Kindeva_logo.png": "/static/media/Kindeva_logo.0d3bb7d0d4f108c967d2.png",
+    "index.html": "/index.html",
+    "main.2806db11.css.map": "/static/css/main.2806db11.css.map",
+    "main.a8c938ff.js.map": "/static/js/main.a8c938ff.js.map"
   },
   "entrypoints": [
     "static/css/main.2806db11.css",
-    "static/js/main.e1fb8458.js"
+    "static/js/main.a8c938ff.js"
   ]
 }
