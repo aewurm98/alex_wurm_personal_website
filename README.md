@@ -8,7 +8,7 @@ If you fork this repo, please change the **mailto address** to your own email be
 
 You can ctrl+F 'mailto' in the `Bio/index.js` and `LearnMore/index.js` files to find the current mailto specs.
 
-### Built Using
+## Built Using
 * [HTML 5](https://developers.google.com/web/)
 * [Bootstrap 5](https://getbootstrap.com/) for CSS
 * [React 18](https://reactjs.org/) for JS
