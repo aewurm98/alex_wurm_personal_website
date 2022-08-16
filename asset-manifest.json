@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.2806db11.css",
-    "main.js": "/static/js/main.a8c938ff.js",
+    "main.js": "/static/js/main.a8ff0c6a.js",
+    "static/media/blogging_stock_photo.jpg": "/static/media/blogging_stock_photo.8612d289fb238231980f.jpg",
     "static/media/Alex_Nature_Zoom.png": "/static/media/Alex_Nature_Zoom.225da70429537db2bcd9.png",
     "static/media/react_website_development_stock_photo.jpg": "/static/media/react_website_development_stock_photo.cf7b6bd11cab94294c3e.jpg",
     "static/media/Turquoise_Mountains.jpg": "/static/media/Turquoise_Mountains.0bec48f4a1ae72c9a7f5.jpg",
@@ -21,10 +22,10 @@
     "static/media/Kindeva_logo.png": "/static/media/Kindeva_logo.0d3bb7d0d4f108c967d2.png",
     "index.html": "/index.html",
     "main.2806db11.css.map": "/static/css/main.2806db11.css.map",
-    "main.a8c938ff.js.map": "/static/js/main.a8c938ff.js.map"
+    "main.a8ff0c6a.js.map": "/static/js/main.a8ff0c6a.js.map"
   },
   "entrypoints": [
     "static/css/main.2806db11.css",
-    "static/js/main.a8c938ff.js"
+    "static/js/main.a8ff0c6a.js"
   ]
 }
