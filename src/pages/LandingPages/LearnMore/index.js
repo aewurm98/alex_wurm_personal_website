@@ -8,7 +8,7 @@ import MKButton from "components/MKButton";
 
 // Images
 import mountains4 from "assets/images/my-images/Turquoise_Mountains.jpg";
-import mountains5 from "assets/images/my-images/White_Mountains.jpg";
+import blog from "assets/images/my-images/blogging_stock_photo.jpg";
 import alex from "assets/images/my-images/alex_in_mountains.jpeg";
 
 function LearnMore() {
@@ -73,59 +73,97 @@ function LearnMore() {
               flex={1}
               overflow="visible"
             >
-              <MKTypography variant="h4">
+              <MKTypography variant="h4" flex={1}>
                 📚 Want to hear more about what I'm up to?
               </MKTypography>
-              <MKButton
-                sx={{ width: "100%" }}
-                flex={1}
+              <MKBox
                 position="relative"
-                variant="contained"
-                color="dark"
-                to="#"
-                onClick={(e) => {
-                  window.open(
-                    "mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website"
-                  );
-                  e.preventDefault();
-                }}
+                flex={9}
+                display="flex"
+                flexDirection="row"
+                alignItems="start"
+                justifyContent="start"
+                height="540px"
+                width="100%"
+                overflow="visible"
               >
-                Send me an email
-              </MKButton>
-              <MKButton
-                sx={{ width: "100%" }}
-                flex={1}
-                position="relative"
-                variant="contained"
-                color="dark"
-                to="#"
-                onClick={(e) => {
-                  window.open("https://alexwurm.substack.com/");
-                  e.preventDefault();
-                }}
-              >
-                Check out my Substack!
-              </MKButton>
-            </MKBox>
-            <MKBox height="100%" flex={3} p={1} position="relative">
-              <img
-                src={alex}
-                alt="alex"
-                style={{
-                  objectFit: "contain",
-                  height: "100%",
-                  width: "100%",
-                }}
-              />
-              <img
-                src={mountains5}
-                alt="white_mountains"
-                style={{
-                  objectFit: "contain",
-                  height: "100%",
-                  width: "100%",
-                }}
-              />
+                <MKBox
+                  height="100%"
+                  width="50%"
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  justifyContent="start"
+                  position="relative"
+                  p={1}
+                  flex={1}
+                >
+                  <img
+                    src={alex}
+                    alt="alex"
+                    style={{
+                      objectFit: "contain",
+                      height: "540px",
+                      width: "100%",
+                    }}
+                  />
+                  <MKButton
+                    sx={{ height: "30%", width: "80%", opacity: 0.75 }}
+                    my={1}
+                    mx={1}
+                    flex={1}
+                    position="relative"
+                    variant="contained"
+                    color="dark"
+                    to="#"
+                    onClick={(e) => {
+                      window.open(
+                        "mailto:aewurm98@gmail.com?subject=Inquiring%20from%20your%20website"
+                      );
+                      e.preventDefault();
+                    }}
+                  >
+                    Send me an email
+                  </MKButton>
+                </MKBox>
+                <MKBox
+                  height="100%"
+                  width="50%"
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  justifyContent="start"
+                  position="relative"
+                  p={1}
+                  flex={1}
+                >
+                  <img
+                    src={blog}
+                    alt="blog_stock_photo"
+                    style={{
+                      objectFit: "contain",
+                      height: "540px",
+                      width: "100%",
+                    }}
+                  />
+                  <MKButton
+                    sx={{ height: "30%", width: "80%", opacity: 0.75 }}
+                    my={1}
+                    mx={1}
+                    flex={1}
+                    position="relative"
+                    variant="contained"
+                    color="dark"
+                    to="#"
+                    onClick={(e) => {
+                      window.open("https://alexwurm.substack.com/");
+                      e.preventDefault();
+                    }}
+                  >
+                    Check out my Substack!
+                  </MKButton>
+                </MKBox>
+              </MKBox>
             </MKBox>
           </MKBox>
         </MKBox>
