@@ -8,6 +8,7 @@ import MKButton from "components/MKButton";
 
 // Images
 import mountains4 from "assets/images/my-images/Turquoise_Mountains.jpg";
+import mountains5 from "assets/images/my-images/White_Mountains.jpg";
 import alex from "assets/images/my-images/alex_in_mountains.jpeg";
 
 function LearnMore() {
@@ -110,6 +111,15 @@ function LearnMore() {
               <img
                 src={alex}
                 alt="alex"
+                style={{
+                  objectFit: "contain",
+                  height: "100%",
+                  width: "100%",
+                }}
+              />
+              <img
+                src={mountains5}
+                alt="white_mountains"
                 style={{
                   objectFit: "contain",
                   height: "100%",
